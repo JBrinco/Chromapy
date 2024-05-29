@@ -1,4 +1,4 @@
-# ChromaPython
+# Chromapy
 Python Scripts for Chromatographic Analysis and Data Processing
 
 Although uninventive, the name of the project is unlikely to cause any confusion as to its purpose.
