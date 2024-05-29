@@ -1,0 +1,46 @@
+0  88541.485714  3344.914286 -25113.942857 -84303.428571  66432.0  28553.828571 -45433.714286 -40035.085714  34172.914286
+0  88541.485714  3344.914286 -25113.942857 -84303.428571  66432.0  28553.828571 -45433.714286 -40035.085714  34172.914286
+Tempo Extracao       88541.485714
+Acido                 3344.914286
+Fibra               -25113.942857
+Ultra-sons          -84303.428571
+Sal                  66432.000000
+% de Organico        28553.828571
+Tipo Organico       -45433.714286
+Volume Solvente     -40035.085714
+Tempo Retroextracao  34172.914286
+Main Effect:
+----------
+Tempo Extracao       88541.485714
+Acido                 3344.914286
+Fibra               -25113.942857
+Ultra-sons          -84303.428571
+Sal                  66432.000000
+% de Organico        28553.828571
+Tipo Organico       -45433.714286
+Volume Solvente     -40035.085714
+Tempo Retroextracao  34172.914286
+----------
+Main Effect:
+----------
+Tempo Extracao       88541.485714
+Acido                 3344.914286
+Fibra               -25113.942857
+Ultra-sons          -84303.428571
+Sal                  66432.000000
+% de Organico        28553.828571
+Tipo Organico       -45433.714286
+Volume Solvente     -40035.085714
+Tempo Retroextracao  34172.914286
+----------
+Main Effect:
+----------
+Tempo Extracao       88541.485714
+Acido                 3344.914286
+Fibra               -25113.942857
+Ultra-sons          -84303.428571
+Sal                  66432.000000
+% de Organico        28553.828571
+Tipo Organico       -45433.714286
+Volume Solvente     -40035.085714
+Tempo Retroextracao  34172.914286

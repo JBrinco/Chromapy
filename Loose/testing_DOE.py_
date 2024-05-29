@@ -1,0 +1,14 @@
+#!/bin/python
+
+import pandas as pd
+import numpy as np
+import chromapy
+
+
+matrix = pd.read_csv("DOE_Input.csv")
+print(matrix)
+
+df = chromapy.full_factorial("DOE_Input.csv")
+print(df)
+
+df.to_csv("Full_Fact.csv")

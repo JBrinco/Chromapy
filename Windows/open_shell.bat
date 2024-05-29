@@ -1,0 +1,1 @@
+cmd.exe /K %%USERPROFILE%%\AppData\Local\Continuum\Anaconda3\Scripts\activate.bat

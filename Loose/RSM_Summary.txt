@@ -1,0 +1,156 @@
+
+Call:
+rsm(formula = Results ~ SO(x1, x2, x3), data = coded_design)
+
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  4.00000    1.47902  2.7045  0.03536 *
+x1           1.87500    0.81009  2.3146  0.05989 .
+x2           0.75000    0.81009  0.9258  0.39026  
+x3          -5.12500    1.55121 -3.3039  0.01633 *
+x1:x2       -0.50000    0.38188 -1.3093  0.23833  
+x1:x3        0.75000    0.38188  1.9640  0.09716 .
+x2:x3        1.00000    0.38188  2.6186  0.03966 *
+x1^2        -0.75000    0.38188 -1.9640  0.09716 .
+x2^2        -0.50000    0.38188 -1.3093  0.23833  
+x3^2        -1.25000    0.38188 -3.2733  0.01696 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Multiple R-squared:  0.8971,	Adjusted R-squared:  0.7426 
+F-statistic:  5.81 on 9 and 6 DF,  p-value: 0.02212
+
+Analysis of Variance Table
+
+Response: Results
+                Df Sum Sq Mean Sq F value  Pr(>F)
+FO(x1, x2, x3)   3  13.75  4.5833  7.8571 0.01682
+TWI(x1, x2, x3)  3   7.25  2.4167  4.1429 0.06558
+PQ(x1, x2, x3)   3   9.50  3.1667  5.4286 0.03812
+Residuals        6   3.50  0.5833                
+Lack of fit      3   2.75  0.9167  3.6667 0.15712
+Pure error       3   0.75  0.2500                
+
+Stationary point of response surface:
+       x1        x2        x3 
+ 0.637931 -2.379310 -2.810345 
+
+Stationary point in original units:
+   Inj_Temp    Inj_Time Source_Temp 
+  259.56897   -11.37931   243.79310 
+
+Eigenanalysis:
+eigen() decomposition
+$values
+[1] -0.2410730 -0.5499127 -1.7090143
+
+$vectors
+         [,1]        [,2]       [,3]
+x1 -0.1574462  0.89217875 -0.4233530
+x2  0.9068665 -0.03907012 -0.4196030
+x3  0.3909013  0.44998957  0.8029356
+
+
+
+Call:
+rsm(formula = Results ~ SO(x1, x2, x3), data = coded_design)
+
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  4.00000    1.47902  2.7045  0.03536 *
+x1           1.87500    0.81009  2.3146  0.05989 .
+x2           0.75000    0.81009  0.9258  0.39026  
+x3          -5.12500    1.55121 -3.3039  0.01633 *
+x1:x2       -0.50000    0.38188 -1.3093  0.23833  
+x1:x3        0.75000    0.38188  1.9640  0.09716 .
+x2:x3        1.00000    0.38188  2.6186  0.03966 *
+x1^2        -0.75000    0.38188 -1.9640  0.09716 .
+x2^2        -0.50000    0.38188 -1.3093  0.23833  
+x3^2        -1.25000    0.38188 -3.2733  0.01696 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Multiple R-squared:  0.8971,	Adjusted R-squared:  0.7426 
+F-statistic:  5.81 on 9 and 6 DF,  p-value: 0.02212
+
+Analysis of Variance Table
+
+Response: Results
+                Df Sum Sq Mean Sq F value  Pr(>F)
+FO(x1, x2, x3)   3  13.75  4.5833  7.8571 0.01682
+TWI(x1, x2, x3)  3   7.25  2.4167  4.1429 0.06558
+PQ(x1, x2, x3)   3   9.50  3.1667  5.4286 0.03812
+Residuals        6   3.50  0.5833                
+Lack of fit      3   2.75  0.9167  3.6667 0.15712
+Pure error       3   0.75  0.2500                
+
+Stationary point of response surface:
+       x1        x2        x3 
+ 0.637931 -2.379310 -2.810345 
+
+Stationary point in original units:
+   Inj_Temp    Inj_Time Source_Temp 
+  259.56897   -11.37931   243.79310 
+
+Eigenanalysis:
+eigen() decomposition
+$values
+[1] -0.2410730 -0.5499127 -1.7090143
+
+$vectors
+         [,1]        [,2]       [,3]
+x1 -0.1574462  0.89217875 -0.4233530
+x2  0.9068665 -0.03907012 -0.4196030
+x3  0.3909013  0.44998957  0.8029356
+
+
+
+Call:
+rsm(formula = Results ~ SO(x1, x2, x3), data = coded_design)
+
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  4.00000    1.47902  2.7045  0.03536 *
+x1           1.87500    0.81009  2.3146  0.05989 .
+x2           0.75000    0.81009  0.9258  0.39026  
+x3          -5.12500    1.55121 -3.3039  0.01633 *
+x1:x2       -0.50000    0.38188 -1.3093  0.23833  
+x1:x3        0.75000    0.38188  1.9640  0.09716 .
+x2:x3        1.00000    0.38188  2.6186  0.03966 *
+x1^2        -0.75000    0.38188 -1.9640  0.09716 .
+x2^2        -0.50000    0.38188 -1.3093  0.23833  
+x3^2        -1.25000    0.38188 -3.2733  0.01696 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Multiple R-squared:  0.8971,	Adjusted R-squared:  0.7426 
+F-statistic:  5.81 on 9 and 6 DF,  p-value: 0.02212
+
+Analysis of Variance Table
+
+Response: Results
+                Df Sum Sq Mean Sq F value  Pr(>F)
+FO(x1, x2, x3)   3  13.75  4.5833  7.8571 0.01682
+TWI(x1, x2, x3)  3   7.25  2.4167  4.1429 0.06558
+PQ(x1, x2, x3)   3   9.50  3.1667  5.4286 0.03812
+Residuals        6   3.50  0.5833                
+Lack of fit      3   2.75  0.9167  3.6667 0.15712
+Pure error       3   0.75  0.2500                
+
+Stationary point of response surface:
+       x1        x2        x3 
+ 0.637931 -2.379310 -2.810345 
+
+Stationary point in original units:
+   Inj_Temp    Inj_Time Source_Temp 
+  259.56897   -11.37931   243.79310 
+
+Eigenanalysis:
+eigen() decomposition
+$values
+[1] -0.2410730 -0.5499127 -1.7090143
+
+$vectors
+         [,1]        [,2]       [,3]
+x1 -0.1574462  0.89217875 -0.4233530
+x2  0.9068665 -0.03907012 -0.4196030
+x3  0.3909013  0.44998957  0.8029356
+
+
