@@ -24,7 +24,7 @@ This manual is written for semi-advanced users, who can script in python, and al
 4. [Third Example](#third-example)
 5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
-#Overview of Functionality
+# Overview
 
 ### There are two sides of this package: A module and a collection of scripts.
 
