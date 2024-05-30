@@ -36,6 +36,7 @@ This section presents a simple description of Chromapy: its structure and functi
 - **Multivariate Analysis**
 - **Quantification Assistant**
 - **Chromatography Calculators**
+
 Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
