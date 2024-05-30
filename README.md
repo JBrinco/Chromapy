@@ -1,7 +1,3 @@
-%% # Chromapy
-
-%% ![Chromapy](Examples_Templates/Images/Chromapy.png?raw=true)
-
 <h1 align="center">
   <img src="Examples_Templates/Images/Chromapy.png" alt="Chromapy">
 </h1>
@@ -10,7 +6,7 @@ Python Scripts for Chromatographic Data Processing
 
 Although uninventive, the name of the project is unlikely to cause any confusion as to its purpose.
 
-## Newcomers, read this!
+# Newcomers, read this!
 
 Thank you for your interest. This package can help you in the treatment of chromatographic data and the like. It does NOT read or manipulate chromatograms directly (the program that came with your instrument can do it better anyways, and there is always OpenChrom). You must integrate your chromatograms, and add that data (in the form of .csv or .xlsx) to this program.
 
