@@ -64,7 +64,6 @@ Built on top of other DOE packages, provides both matrix design as well as data 
 
 The input is very simple. For two level designs (Plackett-burman and full factorial), simply do:
 
-#### Input file
 
 | Variable1       | Variable2       | Variable3       | Variable4       | ... |
 | ---             | ---             | ---             | ---             | --- |
