@@ -19,12 +19,26 @@ This manual is written for semi-advanced users, who can script in python, and al
 
 # Table of Contents
 1. [Overview of Functionality](#overview)
-2. wef
+	1. [Design of Experiments](#overview_doe)
+	2. [Multivariate Analysis](#overview_multivariate)
+	3. [Quantification Assistant](#overview_quantification)
+	4. [Chromatography Calculators](#overview_calculators)
+2. [General](#overview_general)
 3. [Example2](#example2)
 4. [Third Example](#third-example)
 5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
 # Overview of Functionality <a name="overview"></a>
+
+This section presents a simple description of Chromapy: its structure and functionality. Instructions for each module can be found below.
+
+	## Design of Experiments <a name="overview_doe"></a>
+
+	## Multivariate Analysis <a name="overview_multivariate"></a>
+
+	## Quantification Assistant <a name="overview_quantification"></a>
+
+	## Chromatography Calculators <a name="overview_calculators"></a>
 
 ### There are two sides of this package: A module and a collection of scripts.
 
