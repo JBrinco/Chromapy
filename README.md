@@ -31,7 +31,12 @@ This manual is written for semi-advanced users, who can script in python, and al
 
 # Overview of Functionality <a name="overview"></a>
 
-This section presents a simple description of Chromapy: its structure and functionality. Instructions for each module can be found below.
+This section presents a simple description of Chromapy: its structure and functionality. The program is divided into four submodules:
+- **Design of Experiments**
+- **Multivariate Analysis**
+- **Quantification Assistant**
+- **Chromatography Calculators**
+Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
 
@@ -47,17 +52,22 @@ few
 
 ## Chromatography Calculators <a name="overview_calculators"></a>
 
-gfew
+This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which I needed to to in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
 
 # Structure <a name="structure"></a>
 
 ### There are two sides to this package: A module and a collection of scripts.
 
-The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines.
+The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines. The code can be found in the folder `chromapy`.
 
-The Scripts are intended for easy command line use, withought requiring any specialized computer knowledge.
+The Scripts are intended for easy command line use, without requiring any specialized computer knowledge. I've put then in the parent folder so that people can just download the whole repository and run them without difficulty. Currently there are these scripts: `chromacalc.py`  `DOE.py`  `PCA.py`  `PLS.py` and `Quantification.py`. The `.py` means these are python source code files, which your python interperter can read.
 
-In the future I might add a Graphical User Interface for those terribly intimidated by the command line. But for now, all functionality can be accesed this way.
+The scripts are actually just a way to interface with the module (in the `chromapy` folder) through the command line.
+
+There is also an `Examples_Templates` folder which has example input and output files for every function the software performs. Please look into these carefully, because the program requires very specific inputs to work prperly. This is explained in the detailed sections for each submodule.
+
+There is also a `Windows` folder with two files, which will help you open an anaconda instance in Microsoft Windows.
+
 
 
 
