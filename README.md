@@ -1,4 +1,7 @@
-# Chromapy
+%% # Chromapy
+
+![Chromapy](Examples_Templates/Images/Chromapy.png?raw=true)
+
 Python Scripts for Chromatographic Data Processing
 
 Although uninventive, the name of the project is unlikely to cause any confusion as to its purpose.
@@ -11,7 +14,15 @@ If you are familiar with the Python programming language, the module will be ver
 
 If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line).
 
-This manual is written for semi-advanced users, who can script in python. For basic usage, read XXXXHEREXXXXXXX
+This manual is written for semi-advanced users, who can script in python, and also for basic users. All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It not a bomb, you know?
+
+
+# Table of Contents
+1. [Example](#example)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+
 
 ## Milestones
 
