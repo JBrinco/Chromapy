@@ -76,19 +76,29 @@ You can name the variables whatever you want (try avoiding special symbols, like
 
 For Box-Behnken designs, the input file changes slightly:
 
+
+
 | Variable1            | Variable2            | Variable3            | Variable4            | ... |
+| ---                  | ---                  | ---                  | ---                  | --- |
 | Var1 center value    | Var2 center value    | Var3 center value    | Var4 center value    | ... |
 | Var1 deviation value | Var2 deviation value | Var3 deviation value | Var4 deviation value | ... |
 
+
+
 So if you put:
+
+
 
 | Temperature          |
 | 250                  |
 | 50                   |
 
+
+
 The values for temperature will be 200, 250 and 300 (know thy units).
 
 For calculating the main effect you have to input the .csv with the MATRIX (-1 and 1) which you got when you generated the design, and a second .csv with a single column entitled "Results" (capital R):
+
 
 | Results |
 | 3583.3  |
@@ -96,6 +106,8 @@ For calculating the main effect you have to input the .csv with the MATRIX (-1 a
 | 2010.4  |
 | 9231.8  |
 | ...     |
+
+
 
 These results must be in the same order as the experiments in the matrix.
 
@@ -132,10 +144,12 @@ You do NOT need to use .csv files for most functions, but it is advised. Aso sup
 
 The input file should have:
 
+
 | Sample | Type | Var1 | Var2 | Var3 | ... |
 | ------ | ---- | ---- | ---- | ---- | --- |
 | water1 | S    | 12.5 | 22.1 | 0.01 | ... |
 | water2 | G    | 11.7 | 35.2 | 0.03 | ... |
+
 
 `Var1`, `Var2`, etc. take any name or number you want, and this will be the name given to the loadings in the biplot. The `Type` is optional, and will separate the samples by color and shape, as well as print a label.
 
