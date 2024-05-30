@@ -41,22 +41,20 @@ Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
 
+<img src="Examples_Templates/Images/RSM_Example.png" align="center" width="400" alt="A really impressive although empty response surface">
+
 This submodule will assist in the use of experimental designs from beginning to end. It can:
 - Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
-- Calculate main effect for the screening designs (two levels);
+- Calculate main effect for the screening designs (two level full factorial and Plackett-Burman);
 - **FUTURE** Calculate statistical significance for main effects in screening designs;
 - Perform response surface moddeling for a Box-Behnken design;
 
-
-<img src="Examples_Templates/Images/RSM_Example.png" align="center" width="400" alt="A really impressive although empty response surface">
-
-This is by far the most complex submodule, but using it is easy enough. However, one must know what they are doing in order to avoid errors (something I'm very prone to).
-[here](https://github.com/JamesMarshall31/design-of-experiments/).
+This is by far the most complex submodule, but using it is easy enough. However, one must know the basic theory of experimental design in order to avoid mistakes (something I'm very prone to).
 
 
 ## Multivariate Analysis <a name="overview_multivariate"></a>
 
-wef
+<img src="Examples_Templates/Images/PCA.png" align="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
 
 ## Quantification Assistant <a name="overview_quantification"></a>
 
@@ -84,6 +82,8 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 
 # Design of Experiments <a name="doe"></a>
+
+Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python, which can do response surface modelling. the first time you run the code, it should install the required R dependencies.
 
 # Multivariate Analysis <a name="multivariate"></a>
 
