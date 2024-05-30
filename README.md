@@ -62,7 +62,9 @@ This is by far the most complex submodule, but using it is easy enough. However,
 
 ## Quantification Assistant <a name="overview_quantification"></a>
 
-few
+<img src="Examples_Templates/Images/Calibration.png" align="center" width="400" alt="Simple calibration...">
+
+Automatic quantification from signal values (does not perform integration). Provides also Recovery calculation and expanded measurement uncertainty (the full uncertainty calculated from all measurments and steps).
 
 ## Chromatography Calculators <a name="overview_calculators"></a>
 
