@@ -10,11 +10,15 @@ Although uninventive, the name of the project is unlikely to cause any confusion
 
 Thank you for your interest. This package can help you in the treatment of chromatographic data and the like. It does NOT read or manipulate chromatograms directly (the program that came with your instrument can do it better anyways, and there is always OpenChrom). You must integrate your chromatograms, and add that data (in the form of .csv or .xlsx) to this program.
 
-If you are familiar with the Python programming language, the module will be very easy to use, and you can change it to your liking, just as long as you abide by the GNU General Public License v3.
+At heart, this is simply an attempt to make a free software package for chromatography calculations. The whole thing is just an easier way to interact with already written libraries, so that you can seamlesly input your data and get a chewed-out result. However, it is obviously your responsibility to know what you are getting and how to interpret it (I mostly don't, but you can do better than me).
+
+If you are familiar with the Python programming language, the module will be very easy to use, and you can change it to your liking, just as long as you abide by the GNU General Public License v3. If you are just using the software, then you can do whatever you want (really) so long as you clearly mention you used it in your publications (this is more for the sake of replicability than my own ego, I promise...). However, if you are changing the software or oherwise publishing it, you must abide by the license, whose most important feature is that it requires all derivatives to release the source code.
 
 If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line).
 
-This manual is written for semi-advanced users, who can script in python, and also for basic users. All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It not a bomb, you know?
+This manual is written for semi-advanced users, who can script in python, and also for basic users. All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
+
+**A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
 
 # Table of Contents
