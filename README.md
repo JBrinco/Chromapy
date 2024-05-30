@@ -45,7 +45,9 @@ Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
 
+<center>
 <img src="Examples_Templates/Images/RSM_Example.png" class="center" width="400" alt="A really impressive although empty response surface">
+</center>
 
 This submodule will assist in the use of experimental designs from beginning to end. It can:
 - Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
