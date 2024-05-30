@@ -45,7 +45,7 @@ Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
 
-<img src="Examples_Templates/Images/RSM_Example.png" align="center" width="400" alt="A really impressive although empty response surface">
+<img src="Examples_Templates/Images/RSM_Example.png" class="center" width="400" alt="A really impressive although empty response surface">
 
 This submodule will assist in the use of experimental designs from beginning to end. It can:
 - Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
@@ -58,11 +58,11 @@ This is by far the most complex submodule, but using it is easy enough. However,
 
 ## Multivariate Analysis <a name="overview_multivariate"></a>
 
-<img src="Examples_Templates/Images/PCA.png" align="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
+<img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
 
 ## Quantification Assistant <a name="overview_quantification"></a>
 
-<img src="Examples_Templates/Images/Calibration.png" align="center" width="400" alt="Simple calibration...">
+<img src="Examples_Templates/Images/Calibration.png" class="center" width="400" alt="Simple calibration...">
 
 Automatic quantification from signal values (does not perform integration). Provides also Recovery calculation and expanded measurement uncertainty (the full uncertainty calculated from all measurments and steps).
 
