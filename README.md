@@ -18,44 +18,13 @@ This manual is written for semi-advanced users, who can script in python, and al
 
 
 # Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+1. [Overview of Functionality](#Overview of Functionality)
+1.1. efewfe
+3. [Example2](#example2)
+4. [Third Example](#third-example)
+5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
-
-## Milestones
-
-#### Design of Experiments
-
-- [ ] Plackett burman significance calculation
-- [ ] Plackett burman designs are "rotable"
-
-#### Quantification Assistant
-
-- [x] Automatic quantification
-- [x] Results with stdev (+-), finds sample replicates and presents result with either stdev or student-t
-- [x] Calculation of measurement performance parameters (LOD, Recovery, etc.)
-- [x] Script for CLI
-
-#### Multivariate Analyser
-
-- [x] PCA
-- [x] PLS
-- [ ] ANOVA (one and two way)
-- [ ] Cluster Analysis
-- [ ] Discriminant Analysis
-- [x] Graphing capabilities
-- [x] Script for CLI
-
-#### ChromaCalc
-
-- [x] HPLC Solvent consumption
-- [ ] Kovats Calculation
-- [ ] Experiment Randomizer
-- [ ] Analytical eco-scale calculation
-
-## Structure
+#Overview of Functionality
 
 ### There are two sides of this package: A module and a collection of scripts.
 
@@ -198,4 +167,35 @@ plot = chromapy.pca_plot(pca_result, loadings_df, loadings, output="sample_pca_o
 
 On Biplots (both samples and loadings) you will have to scale up or down the loadings to correctly fit the plot axis. This is done with the `loadings_scale` option, as shown. When the graph is shown on screen, you can save directly, so the `output` option is actually unnecessary.
 
-You can (and should) save the graphs as .svg files, which you can then open in inkscape and edit to your heart's content!
+You can (and should) save the graphs as .svg files, which you can then open in inkscape and edit to your heart's content! Or if you use LaTeX, which does not support .svg directly, you can convert them to .pdf in inkscape.
+
+## Milestones
+
+#### Design of Experiments
+
+- [ ] Plackett burman significance calculation
+- [ ] Plackett burman designs are "rotable"
+
+#### Quantification Assistant
+
+- [x] Automatic quantification
+- [x] Results with stdev (+-), finds sample replicates and presents result with either stdev or student-t
+- [x] Calculation of measurement performance parameters (LOD, Recovery, etc.)
+- [x] Script for CLI
+
+#### Multivariate Analyser
+
+- [x] PCA
+- [x] PLS
+- [ ] ANOVA (one and two way)
+- [ ] Cluster Analysis
+- [ ] Discriminant Analysis
+- [x] Graphing capabilities
+- [x] Script for CLI
+
+#### ChromaCalc
+
+- [x] HPLC Solvent consumption
+- [ ] Kovats Calculation
+- [ ] Experiment Randomizer
+- [ ] Analytical eco-scale calculation
