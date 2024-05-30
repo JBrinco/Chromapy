@@ -18,13 +18,13 @@ This manual is written for semi-advanced users, who can script in python, and al
 
 
 # Table of Contents
-1. [Overview of Functionality](#Overview)
+1. [Overview of Functionality](#overview)
 2. wef
 3. [Example2](#example2)
 4. [Third Example](#third-example)
 5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 
-# Overview
+# Overview of Functionality <a name="overview"></a>
 
 ### There are two sides of this package: A module and a collection of scripts.
 
