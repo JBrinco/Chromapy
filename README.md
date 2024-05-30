@@ -24,9 +24,10 @@ This manual is written for semi-advanced users, who can script in python, and al
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
 2. [Structure](#structure)
-3. [Example2](#example2)
-4. [Third Example](#third-example)
-5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+3. [Design of Experiments](#doe)
+4. [Multivariate Analysis](#multivariate)
+5. [Quantification Assistant](#quantification)
+5. [Chromatography Calculators](#calculators)
 
 # Overview of Functionality <a name="overview"></a>
 
@@ -50,7 +51,6 @@ gfew
 
 # Structure <a name="structure"></a>
 
-
 ### There are two sides to this package: A module and a collection of scripts.
 
 The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines.
@@ -58,6 +58,19 @@ The module is useful for those familiar with the python programming language, as
 The Scripts are intended for easy command line use, withought requiring any specialized computer knowledge.
 
 In the future I might add a Graphical User Interface for those terribly intimidated by the command line. But for now, all functionality can be accesed this way.
+
+
+
+# Design of Experiments <a name="doe"></a>
+
+# Multivariate Analysis <a name="multivariate"></a>
+
+# Quantification Assistant <a name="quantification"></a>
+
+# Chromatography Calculators <a name="calculators"></a>
+
+
+
 
 ## Functionality
 
