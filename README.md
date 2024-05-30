@@ -1,5 +1,5 @@
 # Chromapy
-Python Scripts for Chromatographic Analysis and Data Processing
+Python Scripts for Chromatographic Data Processing
 
 Although uninventive, the name of the project is unlikely to cause any confusion as to its purpose.
 
@@ -9,7 +9,7 @@ Thank you for your interest. This package can help you in the treatment of chrom
 
 If you are familiar with the Python programming language, the module will be very easy to use, and you can change it to your liking, just as long as you abide by the GNU General Public License v3.
 
-If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line), and eventually there will be a graphical user interface to help you!
+If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line).
 
 This manual is written for semi-advanced users, who can script in python. For basic usage, read XXXXHEREXXXXXXX
 
@@ -17,18 +17,15 @@ This manual is written for semi-advanced users, who can script in python. For ba
 
 #### Design of Experiments
 
-- [x] Make Plackett-Burmam read from assets directory instead of online
-- [x] Matrix creation for all designs is functional
-- [x] Main effect calculation for screening
-- [x] Response Surface with graphing capability
-- [x] Script for CLI
+- [ ] Plackett burman significance calculation
+- [ ] Plackett burman designs are "rotable"
 
 #### Quantification Assistant
 
 - [x] Automatic quantification
-- [ ] Results with stdev (+-), finds sample replicates and presents result with either stdev or student-t
-- [ ] Calculation of measurement performance parameters (LOD, Recovery, etc.)
-- [ ] Script for CLI
+- [x] Results with stdev (+-), finds sample replicates and presents result with either stdev or student-t
+- [x] Calculation of measurement performance parameters (LOD, Recovery, etc.)
+- [x] Script for CLI
 
 #### Multivariate Analyser
 
@@ -45,7 +42,6 @@ This manual is written for semi-advanced users, who can script in python. For ba
 - [x] HPLC Solvent consumption
 - [ ] Kovats Calculation
 - [ ] Experiment Randomizer
-- [ ] Isotope patterns Calculation (from PythoMS)
 - [ ] Analytical eco-scale calculation
 
 ## Structure
@@ -54,11 +50,7 @@ This manual is written for semi-advanced users, who can script in python. For ba
 
 The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines.
 
-EXAMPLE
-
 The Scripts are intended for easy command line use, withought requiring any specialized computer knowledge.
-
-EXAMPLE
 
 In the future I might add a Graphical User Interface for those terribly intimidated by the command line. But for now, all functionality can be accesed this way.
 
@@ -66,15 +58,20 @@ In the future I might add a Graphical User Interface for those terribly intimida
 
 ### Design of Experiments (DOE)
 
-Built on top of other DOE packages, provides both matrix design as well as data analysis and response surfaces. Supports Placket-Burman and two-level full factorial designs for screening; and central composite and Box-Behnken designs for fitting a response surface.
+Built on top of other DOE packages, provides both matrix design as well as data analysis and response surfaces. Supports Placket-Burman and two-level full factorial designs for screening. Also provides Box-Behnken designs for fitting a response surface.
 
 #### Instructions
 
 The input is very simple. For two level designs (Plackett-burman and full factorial), simply do:
 
+#### Input file
+
 | Variable1       | Variable2       | Variable3       | Variable4       | ... |
+| ---             | ---             | ---             | ---             | --- |
 | Var1 low value  | Var2 low value  | Var3 low value  | Var4 low value  | ... |
 | Var1 high value | Var2 high value | Var3 high value | Var4 high value | ... |
+
+
 
 You can name the variables whatever you want (try avoiding special symbols, like $#|\, etc. The values need not be numbers, they can be for example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You also don't need to put the low value on top and the high value on the bottom. Check the sample file to get an idea.
 
