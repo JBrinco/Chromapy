@@ -48,7 +48,7 @@ This submodule will assist in the use of experimental designs from beginning to 
 - Perform response surface moddeling for a Box-Behnken design;
 
 
-<img src="Examples_Templates/Images/RSM_Example.png" width="200" alt="A really impressive although empty response surface">
+<img src="Examples_Templates/Images/RSM_Example.png" align="center" width="400" alt="A really impressive although empty response surface">
 
 This is by far the most complex submodule, but using it is easy enough. However, one must know what they are doing in order to avoid errors (something I'm very prone to).
 [here](https://github.com/JamesMarshall31/design-of-experiments/).
