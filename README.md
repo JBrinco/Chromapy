@@ -89,9 +89,10 @@ So if you put:
 
 
 
-| Temperature          |
-| 250                  |
-| 50                   |
+| Temperature   |
+| --- |
+| 250           |
+| 50            |
 
 
 
@@ -101,6 +102,7 @@ For calculating the main effect you have to input the .csv with the MATRIX (-1 a
 
 
 | Results |
+| ---     |
 | 3583.3  |
 | 3945.1  |
 | 2010.4  |
