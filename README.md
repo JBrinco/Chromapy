@@ -41,7 +41,18 @@ Instructions for each module can be found below.
 
 ## Design of Experiments <a name="overview_doe"></a>
 
-fewf
+This submodule will assist in the use of experimental designs from beginning to end. It can:
+- Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
+- Calculate main effect for the screening designs (two levels);
+- **FUTURE** Calculate statistical significance for main effects in screening designs;
+- Perform response surface moddeling for a Box-Behnken design;
+
+
+<img src="Examples_Templates/Images/RSM_Example.png" alt="A really impressive although empty response surface">
+
+This is by far the most complex submodule, but using it is easy enough. However, one must know what they are doing in order to avoid errors (something I'm very prone to).
+[here](https://github.com/JamesMarshall31/design-of-experiments/).
+
 
 ## Multivariate Analysis <a name="overview_multivariate"></a>
 
