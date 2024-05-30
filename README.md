@@ -32,13 +32,21 @@ This manual is written for semi-advanced users, who can script in python, and al
 
 This section presents a simple description of Chromapy: its structure and functionality. Instructions for each module can be found below.
 
-	## Design of Experiments <a name="overview_doe"></a>
+## Design of Experiments <a name="overview_doe"></a>
 
-	## Multivariate Analysis <a name="overview_multivariate"></a>
+fewf
 
-	## Quantification Assistant <a name="overview_quantification"></a>
+## Multivariate Analysis <a name="overview_multivariate"></a>
 
-	## Chromatography Calculators <a name="overview_calculators"></a>
+wef
+
+## Quantification Assistant <a name="overview_quantification"></a>
+
+few
+
+## Chromatography Calculators <a name="overview_calculators"></a>
+
+gfew
 
 ### There are two sides of this package: A module and a collection of scripts.
 
