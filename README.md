@@ -4,9 +4,21 @@
 
 Python Scripts for Chromatographic Data Processing
 
-Although uninventive, the name of the project is unlikely to cause any confusion as to its purpose.
+# Table of Contents
+1. [READ THIS FIRST](#newcomers)
+2. [Overview of Functionality](#overview)
+	1. [Design of Experiments](#overview_doe)
+	2. [Multivariate Analysis](#overview_multivariate)
+	3. [Quantification Assistant](#overview_quantification)
+	4. [Chromatography Calculators](#overview_calculators)
+3. [Structure](#structure)
+4. [Design of Experiments](#doe)
+5. [Multivariate Analysis](#multivariate)
+6. [Quantification Assistant](#quantification)
+7. [Chromatography Calculators](#calculators)
 
-# Newcomers, read this!
+
+# Newcomers, read this! <a name="newcomers"></a>
 
 Thank you for your interest. This package can help you in the treatment of chromatographic data and the like. It does NOT read or manipulate chromatograms directly (the program that came with your instrument can do it better anyways, and there is always OpenChrom). You must integrate your chromatograms, and add that data (in the form of .csv or .xlsx) to this program.
 
@@ -16,22 +28,10 @@ If you are familiar with the Python programming language, the module will be ver
 
 If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line).
 
-This manual is written for semi-advanced users, who can script in python, and also for basic users. All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
+All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
 
 **A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
-
-# Table of Contents
-1. [Overview of Functionality](#overview)
-	1. [Design of Experiments](#overview_doe)
-	2. [Multivariate Analysis](#overview_multivariate)
-	3. [Quantification Assistant](#overview_quantification)
-	4. [Chromatography Calculators](#overview_calculators)
-2. [Structure](#structure)
-3. [Design of Experiments](#doe)
-4. [Multivariate Analysis](#multivariate)
-5. [Quantification Assistant](#quantification)
-5. [Chromatography Calculators](#calculators)
 
 # Overview of Functionality <a name="overview"></a>
 
