@@ -1,6 +1,10 @@
 %% # Chromapy
 
-![Chromapy](Examples_Templates/Images/Chromapy.png?raw=true)
+%% ![Chromapy](Examples_Templates/Images/Chromapy.png?raw=true)
+
+<h1 align="center">
+  <img src="Examples_Templates/Images/Chromapy.png" alt="Chromapy">
+</h1>
 
 Python Scripts for Chromatographic Data Processing
 
