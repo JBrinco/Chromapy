@@ -23,7 +23,7 @@ This manual is written for semi-advanced users, who can script in python, and al
 	2. [Multivariate Analysis](#overview_multivariate)
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
-2. [General](#overview_general)
+2. [Structure](#structure)
 3. [Example2](#example2)
 4. [Third Example](#third-example)
 5. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
@@ -48,7 +48,10 @@ few
 
 gfew
 
-### There are two sides of this package: A module and a collection of scripts.
+# Structure <a name="structure"></a>
+
+
+### There are two sides to this package: A module and a collection of scripts.
 
 The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines.
 
