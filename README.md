@@ -30,6 +30,8 @@ If you are not familiar with any of this, and are wondering what the heck is thi
 
 All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
 
+In section **Overview of Functionality** you can find a simple description of the things this software can do. **Package Structure** describes, well, the package structure, __i. e.__ in what files and directories is what. The remaining sections descibe each sub-module in greater detail.
+
 **A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
 
@@ -69,6 +71,8 @@ Automatic quantification from signal values (does not perform integration). Prov
 ## Chromatography Calculators <a name="overview_calculators"></a>
 
 This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which I needed to to in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
+
+***
 
 # Package Structure <a name="structure"></a>
 
