@@ -12,7 +12,7 @@ Python Scripts for Chromatographic Data Processing
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
 3. [Package Structure](#structure)
-4. [Detailed Manual](#manual)
+4. [Manual](#manual)
 	1. [Design of Experiments](#doe)
 	2. [Multivariate Analysis](#multivariate)
 	3. [Quantification Assistant](#quantification)
@@ -92,7 +92,9 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 ***
 
-# Detailed Manual <a name="manual"></a>
+# Manual <a name="manual"></a>
+
+Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them.
 
 ## Design of Experiments <a name="doe"></a>
 
