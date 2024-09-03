@@ -11,7 +11,7 @@ Python Scripts for Chromatographic Data Processing
 	2. [Multivariate Analysis](#overview_multivariate)
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
-3. [Structure](#structure)
+3. [Package Structure](#structure)
 4. [Design of Experiments](#doe)
 5. [Multivariate Analysis](#multivariate)
 6. [Quantification Assistant](#quantification)
@@ -70,7 +70,7 @@ Automatic quantification from signal values (does not perform integration). Prov
 
 This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which I needed to to in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
 
-# Structure <a name="structure"></a>
+# Package Structure <a name="structure"></a>
 
 ### There are two sides to this package: A module and a collection of scripts.
 
