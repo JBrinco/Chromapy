@@ -12,10 +12,11 @@ Python Scripts for Chromatographic Data Processing
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
 3. [Package Structure](#structure)
-4. [Design of Experiments](#doe)
-5. [Multivariate Analysis](#multivariate)
-6. [Quantification Assistant](#quantification)
-7. [Chromatography Calculators](#calculators)
+4. [Detailed Manual](#manual)
+	1. [Design of Experiments](#doe)
+	2. [Multivariate Analysis](#multivariate)
+	3. [Quantification Assistant](#quantification)
+	4. [Chromatography Calculators](#calculators)
 
 
 # Newcomers, read this! <a name="newcomers"></a>
@@ -34,6 +35,7 @@ In section **Overview of Functionality** you can find a simple description of th
 
 **A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
+***
 
 # Overview of Functionality <a name="overview"></a>
 
@@ -88,18 +90,19 @@ There is also an `Examples_Templates` folder which has example input and output 
 
 There is also a `Windows` folder with two files, which will help you open an anaconda instance in Microsoft Windows.
 
+***
 
+# Detailed Manual <a name="manual"></a>
 
-
-# Design of Experiments <a name="doe"></a>
+## Design of Experiments <a name="doe"></a>
 
 Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python, which can do response surface modelling. the first time you run the code, it should install the required R dependencies.
 
-# Multivariate Analysis <a name="multivariate"></a>
+## Multivariate Analysis <a name="multivariate"></a>
 
-# Quantification Assistant <a name="quantification"></a>
+## Quantification Assistant <a name="quantification"></a>
 
-# Chromatography Calculators <a name="calculators"></a>
+## Chromatography Calculators <a name="calculators"></a>
 
 
 
