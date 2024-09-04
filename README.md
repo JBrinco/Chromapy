@@ -64,15 +64,20 @@ This is by far the most complex submodule, but using it is easy enough. However,
 
 <img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
 
+This submodule will apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
+- Normalize data according to several different algorithms;
+- Calculat principal components for PCA and PLS;
+- Plot the results in several different ways (loadings, samples, biplot...)
+
 ## Quantification Assistant <a name="overview_quantification"></a>
 
 <img src="Examples_Templates/Images/Calibration.png" class="center" width="400" alt="Simple calibration...">
 
-Automatic quantification from signal values (does not perform integration). Provides also Recovery calculation and expanded measurement uncertainty (the full uncertainty calculated from all measurments and steps).
+Automatic quantification from signal values (does not perform integration). Provides also Recovery calculation and some method performance parameters such as detection limits (calculated from the calibration curve, which might not be the ideal method. See below).
 
 ## Chromatography Calculators <a name="overview_calculators"></a>
 
-This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which I needed to to in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
+This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which may be usefulf, for example in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
 
 ***
 
