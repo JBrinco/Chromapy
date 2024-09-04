@@ -45,8 +45,6 @@ This section presents a simple description of Chromapy: its structure and functi
 - **Quantification Assistant**
 - **Chromatography Calculators**
 
-Instructions for each module can be found below.
-
 ## Design of Experiments <a name="overview_doe"></a>
 
 <img src="Examples_Templates/Images/RSM_Example.png" class="center" width="400" alt="A really impressive although empty response surface">
@@ -54,17 +52,16 @@ Instructions for each module can be found below.
 This submodule will assist in the use of experimental designs from beginning to end. It can:
 - Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
 - Calculate main effect for the screening designs (two level full factorial and Plackett-Burman);
-- **FUTURE** Calculate statistical significance for main effects in screening designs;
 - Perform response surface moddeling for a Box-Behnken design;
 
-This is by far the most complex submodule, but using it is easy enough. However, one must know the basic theory of experimental design in order to avoid mistakes (something I'm very prone to).
+This is by far the most complex submodule, but using it is easy enough. However, one must know the basic theory of experimental design in order to avoid mistakes (something I'm very prone to). In the future I might implement the calculation of statistical significance for main effects in screening designs.
 
 
 ## Multivariate Analysis <a name="overview_multivariate"></a>
 
 <img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
 
-This submodule will apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
+This submodule can apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
 - Normalize data according to several different algorithms;
 - Calculat principal components for PCA and PLS;
 - Plot the results in several different ways (loadings, samples, biplot...)
@@ -93,6 +90,8 @@ The scripts are actually just a way to interface with the module (in the `chroma
 
 There is also an `Examples_Templates` folder which has example input and output files for every function the software performs. Please look into these carefully, because the program requires very specific inputs to work prperly. This is explained in the detailed sections for each submodule.
 
+The file called `Calls_functioning` has several examples of command line calls which will give you a result. Use them as examples to find out how the program works.
+
 There is also a `Windows` folder with two files, which will help you open an anaconda instance in Microsoft Windows.
 
 ***
@@ -101,96 +100,7 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them.
 
-## Design of Experiments <a name="doe"></a>
-
-Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python, which can do response surface modelling. the first time you run the code, it should install the required R dependencies.
-
 ## Multivariate Analysis <a name="multivariate"></a>
-
-## Quantification Assistant <a name="quantification"></a>
-
-## Chromatography Calculators <a name="calculators"></a>
-
-
-
-
-## Functionality
-
-### Design of Experiments (DOE)
-
-Built on top of other DOE packages, provides both matrix design as well as data analysis and response surfaces. Supports Placket-Burman and two-level full factorial designs for screening. Also provides Box-Behnken designs for fitting a response surface.
-
-#### Instructions
-
-The input is very simple. For two level designs (Plackett-burman and full factorial), simply do:
-
-
-| Variable1       | Variable2       | Variable3       | Variable4       | ... |
-| ---             | ---             | ---             | ---             | --- |
-| Var1 low value  | Var2 low value  | Var3 low value  | Var4 low value  | ... |
-| Var1 high value | Var2 high value | Var3 high value | Var4 high value | ... |
-
-
-
-You can name the variables whatever you want (try avoiding special symbols, like $#|\, etc. The values need not be numbers, they can be for example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You also don't need to put the low value on top and the high value on the bottom. Check the sample file to get an idea.
-
-For Box-Behnken designs, the input file changes slightly:
-
-
-
-| Variable1            | Variable2            | Variable3            | Variable4            | ... |
-| ---                  | ---                  | ---                  | ---                  | --- |
-| Var1 center value    | Var2 center value    | Var3 center value    | Var4 center value    | ... |
-| Var1 deviation value | Var2 deviation value | Var3 deviation value | Var4 deviation value | ... |
-
-
-
-So if you put:
-
-
-
-| Temperature   |
-| --- |
-| 250           |
-| 50            |
-
-
-
-The values for temperature will be 200, 250 and 300 (know thy units).
-
-For calculating the main effect you have to input the .csv with the MATRIX (-1 and 1) which you got when you generated the design, and a second .csv with a single column entitled "Results" (capital R):
-
-
-| Results |
-| ---     |
-| 3583.3  |
-| 3945.1  |
-| 2010.4  |
-| 9231.8  |
-| ...     |
-
-
-
-These results must be in the same order as the experiments in the matrix.
-
-
-### Quantification Buddy
-
-Automatic quantification from signal values (does not perform integration). Provides also Recovery calculation and expanded measurement uncertainty (the full uncertainty calculated from all measurments and steps).
-
-
-### ChromaCalc
-
-Traditional chromatographic calculations for when needed: HPLC solvent consumption and GC flow to linear velocity and vice versa.
-
-
-
-
-### Multivariate Analyser
-
-Principal Component Analyis and discriminant partial least squares.
-
-#### Instructions:
 
 Options and explanations are given within each function in the source code. This is a quick exposition of the functionality. You can use the pre-made script for an easier time, especially if you don't understand python.
 
@@ -249,33 +159,69 @@ On Biplots (both samples and loadings) you will have to scale up or down the loa
 
 You can (and should) save the graphs as .svg files, which you can then open in inkscape and edit to your heart's content! Or if you use LaTeX, which does not support .svg directly, you can convert them to .pdf in inkscape.
 
-## Milestones
 
-#### Design of Experiments
+## Design of Experiments <a name="doe"></a>
 
-- [ ] Plackett burman significance calculation
-- [ ] Plackett burman designs are "rotable"
+Built on top of other DOE packages, provides both matrix design as well as data analysis and response surfaces. Supports Placket-Burman and two-level full factorial designs for screening. Also provides Box-Behnken designs for fitting a response surface.
 
-#### Quantification Assistant
+Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python. The first time you run the code, it should install the required R dependencies.
 
-- [x] Automatic quantification
-- [x] Results with stdev (+-), finds sample replicates and presents result with either stdev or student-t
-- [x] Calculation of measurement performance parameters (LOD, Recovery, etc.)
-- [x] Script for CLI
+#### Instructions
 
-#### Multivariate Analyser
+The input is very simple. For **two level designs** (Plackett-burman and full factorial), simply do:
 
-- [x] PCA
-- [x] PLS
-- [ ] ANOVA (one and two way)
-- [ ] Cluster Analysis
-- [ ] Discriminant Analysis
-- [x] Graphing capabilities
-- [x] Script for CLI
 
-#### ChromaCalc
+| Variable1       | Variable2       | Variable3       | Variable4       | ... |
+| ---             | ---             | ---             | ---             | --- |
+| Var1 low value  | Var2 low value  | Var3 low value  | Var4 low value  | ... |
+| Var1 high value | Var2 high value | Var3 high value | Var4 high value | ... |
 
-- [x] HPLC Solvent consumption
-- [ ] Kovats Calculation
-- [ ] Experiment Randomizer
-- [ ] Analytical eco-scale calculation
+
+
+You can name the variables whatever you want (try avoiding special symbols, like $#|\, etc. The values need not be numbers, they can be for example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You also don't need to put the low value on top and the high value on the bottom. Check the sample file to get an idea.
+
+For **Box-Behnken designs**, the input file changes slightly:
+
+
+
+| Variable1            | Variable2            | Variable3            | Variable4            | ... |
+| ---                  | ---                  | ---                  | ---                  | --- |
+| Var1 center value    | Var2 center value    | Var3 center value    | Var4 center value    | ... |
+| Var1 deviation value | Var2 deviation value | Var3 deviation value | Var4 deviation value | ... |
+
+
+
+So if you put:
+
+
+
+| Temperature   |
+| --- |
+| 250           |
+| 50            |
+
+
+
+The values for temperature will be 200, 250 and 300.
+
+For calculating the **main effect** you have to input the .csv with the MATRIX (-1 and 1) which you got when you generated the design, and a second .csv with a single column entitled "Results" (capital R):
+
+
+| Results |
+| ---     |
+| 3583.3  |
+| 3945.1  |
+| 2010.4  |
+| 9231.8  |
+| ...     |
+
+
+
+These results must be in the same order as the experiments in the matrix.
+
+
+
+
+## Quantification Assistant <a name="quantification"></a>
+
+## Chromatography Calculators <a name="calculators"></a>
