@@ -7,14 +7,14 @@ Python Scripts for Chromatographic Data Processing
 # Table of Contents
 1. [READ THIS FIRST](#newcomers)
 2. [Overview of Functionality](#overview)
-	1. [Design of Experiments](#overview_doe)
-	2. [Multivariate Analysis](#overview_multivariate)
+	1. [Multivariate Analysis](#overview_multivariate)
+	2. [Design of Experiments](#overview_doe)
 	3. [Quantification Assistant](#overview_quantification)
 	4. [Chromatography Calculators](#overview_calculators)
 3. [Package Structure](#structure)
 4. [Manual](#manual)
-	1. [Design of Experiments](#doe)
-	2. [Multivariate Analysis](#multivariate)
+	1. [Multivariate Analysis](#multivariate)
+	2. [Design of Experiments](#doe)
 	3. [Quantification Assistant](#quantification)
 	4. [Chromatography Calculators](#calculators)
 
@@ -40,10 +40,20 @@ In section **Overview of Functionality** you can find a simple description of th
 # Overview of Functionality <a name="overview"></a>
 
 This section presents a simple description of Chromapy: its structure and functionality. The program is divided into four submodules:
-- **Design of Experiments**
 - **Multivariate Analysis**
+- **Design of Experiments**
 - **Quantification Assistant**
 - **Chromatography Calculators**
+
+
+## Multivariate Analysis <a name="overview_multivariate"></a>
+
+<img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
+
+This submodule can apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
+- Normalize data according to several different algorithms;
+- Calculat principal components for PCA and PLS;
+- Plot the results in several different ways (loadings, samples, biplot...)
 
 ## Design of Experiments <a name="overview_doe"></a>
 
@@ -56,15 +66,6 @@ This submodule will assist in the use of experimental designs from beginning to 
 
 This is by far the most complex submodule, but using it is easy enough. However, one must know the basic theory of experimental design in order to avoid mistakes (something I'm very prone to). In the future I might implement the calculation of statistical significance for main effects in screening designs.
 
-
-## Multivariate Analysis <a name="overview_multivariate"></a>
-
-<img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group">
-
-This submodule can apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
-- Normalize data according to several different algorithms;
-- Calculat principal components for PCA and PLS;
-- Plot the results in several different ways (loadings, samples, biplot...)
 
 ## Quantification Assistant <a name="overview_quantification"></a>
 
