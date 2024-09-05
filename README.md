@@ -52,7 +52,7 @@ This section presents a simple description of Chromapy: its structure and functi
 
 This submodule can apply some types of multivariate analysis methods mostly for dimensionality reduction. At the moment it does principal component analysis (PCA) and partial least squares (PLS). It can:
 - Normalize data according to several different algorithms;
-- Calculat principal components for PCA and PLS;
+- Calculate principal components for PCA and PLS;
 - Plot the results in several different ways (loadings, samples, biplot...)
 
 ## Design of Experiments <a name="overview_doe"></a>
@@ -75,7 +75,7 @@ Automatic quantification from signal values (does not perform integration). Prov
 
 ## Chromatography Calculators <a name="overview_calculators"></a>
 
-This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which may be usefulf, for example in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
+This is a tiny tiny piece of code. It can calculate the volume of solvent used by an HPLC based on the eluent program, which may be useful, for example in order to calculate green analytical chemistry metrics for several methods. It can also transform GC mobile phase linear velocity into flow and vice versa for open tubular columns. This is very basic stuff, but someone might find it useful.
 
 ***
 
@@ -99,7 +99,15 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 # Manual <a name="manual"></a>
 
-Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them.
+Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them. The following explanation deals mostly with interacting directly with the python module. If you want to use the scripts, you can pass the option -h to get help and guidance. For example, if you want to use the experimental design module, just open a terminal window in the same folder as the scripts and write:
+
+```shell
+
+python DOE.py -h
+
+```
+
+It should return a small "manual" for that script (not the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. In order to use the scripts, it is easier if you download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you don't have to make the shell look for your files elsewhere.
 
 ## Multivariate Analysis <a name="multivariate"></a>
 
