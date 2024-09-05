@@ -99,7 +99,12 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 # Manual <a name="manual"></a>
 
-Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them. The following explanation deals mostly with interacting directly with the python module. If you want to use the scripts, you can pass the option -h to get help and guidance. For example, if you want to use the experimental design module, just open a terminal window in the same folder as the scripts and write:
+
+Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them. The first subsection deals with using the scripts, which will be most convenient for users not familiar with python. The following explanations for each submodule deal mostly with interacting directly with python. The module has several dependencies, which you have to figure out how to install (just google it). These are: `numpy`, `seaborn`, `scikit-learn` and `rpy2`.
+
+## Scripts
+
+If you want to use the scripts, you can pass the option -h to get help and guidance. For example, if you want to use the experimental design module, just open a terminal window in the same folder as the scripts and write:
 
 ```shell
 
@@ -107,7 +112,16 @@ python DOE.py -h
 
 ```
 
-It should return a small "manual" for that script (not the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. In order to use the scripts, it is easier if you download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you don't have to make the shell look for your files elsewhere.
+It should return a small "manual" for that script (not the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. The easiest way to use the scripts is to download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you can just call them easily, as in:
+
+```shell
+
+python DOE.py -b BBD_Input.csv
+
+```
+
+Where `BBD_Input.csv` is your input file with the varaible names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `f` and `b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `r` does response-surface modelling for Box-Behnken designs.
+
 
 ## Multivariate Analysis <a name="multivariate"></a>
 

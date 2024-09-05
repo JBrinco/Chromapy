@@ -1,8 +1,8 @@
-./DOE.py -m Examples_Templates/DOE/DOE_results.csv Examples_Templates/DOE/DOE_matrix.csv
-./DOE.py BBD_Input.csv -r "BBD.csv"
-./DOE.py BBD_Input.csv -r "BBD.csv" -t "ACRAZYNAMEANDSTUFF.txt" -P
-./chromacalc.py 0.25 -l 1
-./chromacalc.py 0.25 -f 30
-./chromacalc.py -s calculator_input.csv
-./PLS.py "wine_data_pls.csv" -r 2 -s 10 -l -o "TEST"
-./Quantification.py calibration.csv -s samples.csv -v
+python DOE.py -m Examples_Templates/DOE/DOE_results.csv Examples_Templates/DOE/DOE_matrix.csv
+python DOE.py Examples_Templates/DOE/BBD_Input.csv -r "Examples_Templates/DOE/BBD_with_results.csv"
+python DOE.py Examples_Templates/DOE/BBD_Input.csv -r "Examples_Templates/DOE/BBD_with_results.csv" -t "ACRAZYNAMEANDSTUFF.txt" -P
+python chromacalc.py 0.25 -l 1
+python chromacalc.py 0.25 -f 30
+python chromacalc.py -s Examples_Templates/ChromaCalc/calculator_input.csv
+python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 2 -s 10 -l -o "TEST"
+python quantification.py Examples_Templates/Quantification/calibration.csv -s Examples_Templates/Quantification/samples.csv -v

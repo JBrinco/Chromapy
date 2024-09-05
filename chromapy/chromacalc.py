@@ -35,7 +35,7 @@ def hplc_solvent_manual (flow, y_array, x_array):
     """
 
     y = y_array*flow/100
-    result = integrate.trapz(y, x_array)
+    result = integrate.trapezoid(y, x_array)
 
     return result
 
@@ -61,7 +61,7 @@ def hplc_solvent(data):
     x = df["Time"].values
 
     y = y*flow/100
-    result = integrate.trapz(y, x)
+    result = integrate.trapezoid(y, x)
 
     return result
 
