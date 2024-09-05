@@ -198,7 +198,13 @@ Finally we can graph the plot. There is one function for PCA and another for PLS
 plot = chromapy.pca_plot(pca_result, loadings_df, loadings, output="sample_pca_output.svg", loadings_scale=10)
 ```
 
-On Biplots (both samples and loadings) you will have to scale up or down the loadings to correctly fit the plot axis. This is done with the `loadings_scale` option, as shown. When the graph is shown on screen, you can save directly, so the `output` option is actually unnecessary.
+And for PLS:
+
+```python
+plot = chromapy.pls_plot(pls_result, loadings_df, response=response_df, labels=True, loadings_scale=34, write_loadings = True, output="Sample_PLS_outut.svg")
+```
+
+Only the three first arguments are mandatory, all else will default if you don't pass anything. On Biplots (both samples and loadings) you will have to scale up or down the loadings to correctly fit the plot axis. This is done with the `loadings_scale` option, as shown. When the graph is shown on screen, you can save directly, so the `output` option is actually unnecessary.
 
 You can (and should) save the graphs as .svg files, which you can then open in inkscape and edit to your heart's content! Or if you use LaTeX, which does not support .svg directly, you can convert them to .pdf in inkscape.
 
