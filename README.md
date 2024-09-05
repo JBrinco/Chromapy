@@ -13,10 +13,11 @@ Python Scripts for Chromatographic Data Processing
 	4. [Chromatography Calculators](#overview_calculators)
 3. [Package Structure](#structure)
 4. [Manual](#manual)
-	1. [Multivariate Analysis](#multivariate)
-	2. [Design of Experiments](#doe)
-	3. [Quantification Assistant](#quantification)
-	4. [Chromatography Calculators](#calculators)
+	1. [Scripts](#scripts)
+	2. [Multivariate Analysis](#multivariate)
+	3. [Design of Experiments](#doe)
+	4. [Quantification Assistant](#quantification)
+	5. [Chromatography Calculators](#calculators)
 
 
 # Newcomers, read this! <a name="newcomers"></a>
@@ -102,7 +103,7 @@ There is also a `Windows` folder with two files, which will help you open an ana
 
 Each submodule is treated separately, and functions (mostly) independently. For fine-grained control or more comments/instructions check the source code. Also, the examples and templates are your friends, use them. The first subsection deals with using the scripts, which will be most convenient for users not familiar with python. The following explanations for each submodule deal mostly with interacting directly with python. The module has several dependencies, which you have to figure out how to install (just google it). These are: `numpy`, `seaborn`, `scikit-learn` and `rpy2`.
 
-## Scripts
+## Scripts <a name="scripts"></a>
 
 If you want to use the scripts, you can pass the option -h to get help and guidance. For example, if you want to use the experimental design module, just open a terminal window in the same folder as the scripts and write:
 
