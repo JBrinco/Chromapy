@@ -108,17 +108,13 @@ Each submodule is treated separately, and functions (mostly) independently. For 
 If you want to use the scripts, you can pass the option -h to get help and guidance. For example, if you want to use the experimental design module, just open a terminal window in the same folder as the scripts and write:
 
 ```shell
-
 python DOE.py -h
-
 ```
 
 It should return a small "manual" for that script (not for the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. The easiest way to use the scripts is to download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you can just call them easily, as in:
 
 ```shell
-
 python DOE.py -b BBD_Input.csv
-
 ```
 
 Where `BBD_Input.csv` is your input file with the varaible names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `-f` and `-b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `-r` does response-surface modelling for Box-Behnken designs.
@@ -126,27 +122,25 @@ Where `BBD_Input.csv` is your input file with the varaible names and values (che
 You can simply run each line of code from `Calls_functioning` and it should work. For example:
 
 ```shell
-
 python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o "TEST"
-
 ```
 
-Will give you a partial least squares biplot for 3 response variables, with the loadings scaled to 10x (to fit the biplot) and an output file called TEST.
+Will give you a partial least squares biplot for 3 response variables, with the loadings scaled to 10x (to fit the biplot) and an output file called `TEST.png`.
 
 
 ## Multivariate Analysis <a name="multivariate"></a>
 
-Options and explanations are given within each function in the source code. This is a quick exposition of the functionality. You can use the pre-made script for an easier time, especially if you don't understand python.
+Options and explanations are given within each function in the source code. This is a quick exposition of the functionality. You can use the pre-made script for an easier time, especially if you don't understand python (see above).
 
 First, the file should be imported:
 
 ```python
 import chromapy
 
-df = chromapy.pca_import("Examples/input_data/wine_data.csv")
+df = chromapy.pca_import("Examples_Templates/Multivariate/wine_data.csv")
 ```
 
-You do NOT need to use .csv files for most functions, but it is advised. Aso supported are: .xls, .xlsx, .xlsm, .xlsb, .odf, .ods, .odt, .csv
+You do NOT need to use .csv files for most functions, but it is advised. Aso supported are: .xls, .xlsx, .xlsm, .xlsb, .odf, .ods, .odt
 
 The input file should have:
 
@@ -158,6 +152,15 @@ The input file should have:
 
 
 `Var1`, `Var2`, etc. take any name or number you want, and this will be the name given to the loadings in the biplot. The `Type` is optional, and will separate the samples by color and shape, as well as print a label.
+
+For PLS, you should add the response columns as `Response1`, etc. So for two response variables, do:
+
+| Sample | Type | Response1 | Response2 | Var1 | Var2 | Var3 | ... |
+| ------ | ---- | ----      | ----      | ---- | ---  | ---  | --- |
+| water1 | S    | 122.5     | 0.002     | 12.5 | 22.1 | 0.01 |     |
+| water2 | G    | 101.7     | 0.085     | 11.7 | 35.2 | 0.03 |     |
+| ...    |      |           |           |      |      |      |     |
+
 
 For ease of use and avoidance of errors, please use the sample.csv file provided! You can save it as .xlsx if you wish.
 
