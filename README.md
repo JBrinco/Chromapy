@@ -113,7 +113,7 @@ python DOE.py -h
 
 ```
 
-It should return a small "manual" for that script (not the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. The easiest way to use the scripts is to download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you can just call them easily, as in:
+It should return a small "manual" for that script (not for the module itself!). Equally, you can do `python PCA.py -h`, `python PLS.py -h`, `python chromacalc.py -h` or `python quantification.py -h`. The easiest way to use the scripts is to download this whole repository and then add your datafiles to the parent directory (the one called Chromapy-master), that way you can just call them easily, as in:
 
 ```shell
 
@@ -121,7 +121,17 @@ python DOE.py -b BBD_Input.csv
 
 ```
 
-Where `BBD_Input.csv` is your input file with the varaible names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `f` and `b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `r` does response-surface modelling for Box-Behnken designs.
+Where `BBD_Input.csv` is your input file with the varaible names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `-f` and `-b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `-r` does response-surface modelling for Box-Behnken designs.
+
+You can simply run each line of code from `Calls_functioning` and it should work. For example:
+
+```shell
+
+python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o "TEST"
+
+```
+
+Will give you a partial least squares biplot for 3 response variables, with the loadings scaled to 10x (to fit the biplot) and an output file called TEST.
 
 
 ## Multivariate Analysis <a name="multivariate"></a>

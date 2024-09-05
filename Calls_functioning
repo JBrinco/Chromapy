@@ -4,5 +4,5 @@ python DOE.py Examples_Templates/DOE/BBD_Input.csv -r "Examples_Templates/DOE/BB
 python chromacalc.py 0.25 -l 1
 python chromacalc.py 0.25 -f 30
 python chromacalc.py -s Examples_Templates/ChromaCalc/calculator_input.csv
-python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 2 -s 10 -l -o "TEST"
+python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o "TEST"
 python quantification.py Examples_Templates/Quantification/calibration.csv -s Examples_Templates/Quantification/samples.csv -v
