@@ -175,18 +175,24 @@ The `normalization` option can be set to:
 - "normalize" - Applies the normalize function from scikitlearn, documentation [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html)
 - "standard" - This is the default, if no option is given. Documentation [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)
 - "minmax" - Applies the MinMaxScaler. Documentation [here](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)
-
 - "area" - Will make the sum of all values in a sample equal to 100. Equivalent to using relative percentages of a chromatogram, *ie.* assuming the total area is 100%, and the area of each peak is a certain percentage of that.
 
-Normalizations occur on a sample by sample basis, naturally (not variable by variable).
+Normalizations occur on a sample by sample basis, naturally (not variable by variable). Be aware that if you have response variables (for PLS) these will also be normalized, since the normalization function does not distinguish them.
 
-After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` has the values for each sample witin the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing.
+After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` OR `pls_result` has the values for each sample witin the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing.
 
 ```python
 pca_result, loadings_df, loadings = chromapy.pca(df_normalized)
 ```
 
-Finally we can graph the plot. This function has many options (check the source code), but this is an easy usage case:
+The only difference for PLS is that it requires a `responses` list, where the names of each response variable are. Also, it returns a `response_df` rather than the scikit-lean boject. For 4 response variables:
+
+```python
+responses = ["Response1", "Response2", "Response3", "Response4"]
+pls_result, loadings_df, response_df = chromapy.pls(df_normalized)
+```
+
+Finally we can graph the plot. There is one function for PCA and another for PLS, and they both have many options (check the source code), but this is an easy usage case:
 
 ```python
 plot = chromapy.pca_plot(pca_result, loadings_df, loadings, output="sample_pca_output.svg", loadings_scale=10)
