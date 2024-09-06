@@ -32,7 +32,7 @@ If you are not familiar with any of this, and are wondering what the heck is thi
 
 All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
 
-In section **Overview of Functionality** you can find a simple description of the things this software can do. **Package Structure** describes, well, the package structure, __i. e.__ in what files and directories is what. The remaining sections descibe each sub-module in greater detail.
+In section **Overview of Functionality** you can find a simple description of the things this software can do. **Package Structure** describes, well, the package structure, _i. e._ in what files and directories is what. The remaining sections descibe each sub-module in greater detail.
 
 **A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
@@ -215,7 +215,7 @@ Built on top of other DOE packages, provides both matrix design as well as data 
 
 Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python. The first time you run the code, it should install the required R dependencies.
 
-#### Generating a Design Matrix
+### Generating a Design Matrix
 
 The input is very simple. For **two level designs** (Plackett-burman and full factorial), simply do:
 
@@ -229,8 +229,13 @@ The input is very simple. For **two level designs** (Plackett-burman and full fa
 
 You can name the variables whatever you want (try avoiding special symbols, like $#|\, etc. The values need not be numbers, they can be for example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You also don't need to put the low value on top and the high value on the bottom. Check the sample file to get an idea.
 
-```python
+To generate a design is simple. Both the Plackett-Burman and 2-level full factorial functions will return a design dataframe with the experiments to be performed and their variable values, as well as the matrix of -1 and 1 which was used to produce it. The matrix is required for further calculations, such as main effect. Plackett-Burman requires a second input, which will be an integer of how many experiments you want to perform. This value should be a multiple of four, but the program will round up if needed. It should also be larger than the number of variables, and will not work otherwise.
 
+```python
+import chromapy
+
+design, matrix = chromapy.plackett_burman("Examples_Templates/DOE/DOE_Input.csv", 12)
+print(design)
 ```
 
 For **Box-Behnken designs**, the input file changes slightly:
@@ -256,6 +261,18 @@ So if you put:
 
 
 The values for temperature will be 200, 250 and 300.
+
+To generate the experiment matrix:
+
+```python
+import chromapy
+
+BBDesign = chromapy.box_behnken("Examples_Templates/DOE/BBD_Input.csv", randomize = False, output = "Whatever_file_name_suits_you.csv")
+print(BBDesign)
+randomize = True, output = "Box-Behnken_Design.csv"
+```
+
+`BBDesign` is an R object created by the `rsm` package, but you can print it just the same. It will generate a .csv output by default, but you can change the name. It will also randomize the experiment order by default, but you can set the randomize variable to False and then randomize it yourself (which you definitely should do).
 
 ### Calculating Main Effect of Two-level Designs
 

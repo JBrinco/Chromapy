@@ -221,6 +221,18 @@ def plackett_burman(data, runs):
     else:
         dic_factors = import_initial_csv(data)
 
+    # Conditional changes run number to be a multiple of four
+    if runs % 4 != 0:
+        runs = runs + (4 - (runs % 4))
+
+    #Check if the number of dictionary entries is larger than the required number of runs
+
+    if len(dic_factors) > (runs -1):
+        print("The required number of runs is too small for the number of variables. Please increase the number of runs.")
+        exit()
+    elif len(dic_factors) == (runs -1):
+        print("Warning, you are using the maximum number of variables (factors) possible for this run number. For better results, use a larger design (the next multiple of four).")
+
     # Plackett-Burman designs are made using hadamard matrices
     factor_names = []
     factor_levels = []
@@ -229,9 +241,6 @@ def plackett_burman(data, runs):
         factor_names.append(name)
         factor_levels.append([min(dic_factors[name]), max(dic_factors[name])])
 
-    # Conditional changes run number to be a multiple of four
-    if runs % 4 != 0:
-        runs = runs + (4 - (runs % 4))
 
     #Grabs desired matrix from assets
     array = []
