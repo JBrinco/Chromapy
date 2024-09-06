@@ -298,6 +298,18 @@ matrix.to_csv('Plackett_Burman_matrix.csv', index = False) #Convert matrix to .c
 main_effect = chromapy.main_effect("Examples_Templates/DOE/DOE_results.csv", "Plackett_Burman_matrix.csv") #Calculate main effect
 ```
 
+Using pandas dataframes:
+
+```python
+import chromapy
+import pandas as pd
+
+design, matrix = chromapy.plackett_burman("Examples_Templates/DOE/DOE_Input.csv", 12)
+
+results = pd.read_csv("Examples_Templates/DOE/DOE_results.csv")
+main_effect = chromapy.main_effect(results, matrix, dataframe = True)
+```
+
 
 
 ## Quantification Assistant <a name="quantification"></a>
