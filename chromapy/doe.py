@@ -310,7 +310,7 @@ def main_effect(results, matrix, dataframe = False, output = "main_effect_output
     #Create empty numpy array, and fill it with the results, then multiply the matrix (-1 and 1) by the results, to get a dataframe with the results properly inverted. This is redundant, as results_np could be gotten directly from the .csv file. But if a dataframe is passed directly to the function (dataframe=True), it works.
     results_np = np.empty(0)
     for index, row in results.iterrows():
-        results_np = np.append(results_np, row[0])
+        results_np = np.append(results_np, row.iloc[0]) # row.iloc[0] used to be row[0], but it would get a futurewarning saying this type of indexing was deprecated
     results_multiplied = matrix.multiply(results_np, axis=0)
 
 
@@ -498,10 +498,10 @@ def add_results(design, results):
 def rsm(data, inputfile, print_summary = True, write_summary = True):
     '''
     Calculate/generate the response surface model
-    Design input can be either an R object or a .csv file. Excel is currently not supported, but it might be in the future (imported directly by R)
+    The input can be either an R object or a .csv file. Excel is currently not supported, but it might be in the future (imported directly by R)
     data is the csv or R dataframe with the complete design plus the Results
     inputfile is the same as in the box_behnken function: it is the csv or excel with the initial values, before the design was made.
-    Use write_summary = "filename.txt" to print the summary to a specific file. Alternativly just write_summary = True will output it with a standard name.
+    Use write_summary = "filename.txt" to write the summary to a specific file. Alternativly just write_summary = True will output it with a standard name.
     '''
 
     #Explained in box_behnken above
