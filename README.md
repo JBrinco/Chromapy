@@ -269,14 +269,13 @@ import chromapy
 
 BBDesign = chromapy.box_behnken("Examples_Templates/DOE/BBD_Input.csv", randomize = False, output = "Whatever_file_name_suits_you.csv")
 print(BBDesign)
-randomize = True, output = "Box-Behnken_Design.csv"
 ```
 
-`BBDesign` is an R object created by the `rsm` package, but you can print it just the same. It will generate a .csv output by default, but you can change the name. It will also randomize the experiment order by default, but you can set the randomize variable to False and then randomize it yourself (which you definitely should do).
+`BBDesign` is an R object created by the `rsm` package, but you can print it just the same. The function will generate a .csv output by default, but you can change the name. It will also randomize the experiment order by default, but you can set the randomize variable to False and then randomize it yourself (which you definitely should do).
 
 ### Calculating Main Effect of Two-level Designs
 
-For calculating the **main effect** you have to input the .csv with the MATRIX (-1 and 1) which you got when you generated the design, and a second .csv with a single column entitled "Results" (capital R):
+For calculating the **main effect** you have to input the **Matrix** (-1 and 1, NOT the design) which you got when you generated the design, and a single column entitled "Results" (capital R):
 
 
 | Results |
@@ -289,8 +288,15 @@ For calculating the **main effect** you have to input the .csv with the MATRIX (
 
 
 
-These results must be in the same order as the experiments in the matrix.
+These results must be in the same order as the experiments in the matrix. You can input these either by .csv (default) or correctly formatted dataframes. If you want to use the .csv, you have to generate it with `matrix.to_csv('Plackett_Burman_matrix.csv', index = False)`. Using .csv:
 
+```python
+import chromapy
+
+design, matrix = chromapy.plackett_burman("Examples_Templates/DOE/DOE_Input.csv", 12) #Generate design
+matrix.to_csv('Plackett_Burman_matrix.csv', index = False) #Convert matrix to .csv
+main_effect = chromapy.main_effect("Examples_Templates/DOE/DOE_results.csv", "Plackett_Burman_matrix.csv") #Calculate main effect
+```
 
 
 

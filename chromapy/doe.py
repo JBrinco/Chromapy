@@ -304,7 +304,7 @@ def main_effect(results, matrix, dataframe = False, output = "main_effect_output
     matrix = matrix.astype('float')
     results = results.astype('float')
 
-    #If the matrix and index dataframes have different numbers of rows, will through an assertion error!
+    #If the matrix and index dataframes have different numbers of rows, will throw an assertion error!
     assert len(matrix.index) == len(results.index), "The DOE matrix and Results do not have the same number of rows!"
 
     #Create empty numpy array, and fill it with the results, then multiply the matrix (-1 and 1) by the results, to get a dataframe with the results properly inverted. This is redundant, as results_np could be gotten directly from the .csv file. But if a dataframe is passed directly to the function (dataframe=True), it works.
