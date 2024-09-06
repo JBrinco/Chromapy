@@ -179,17 +179,17 @@ The `normalization` option can be set to:
 
 Normalizations occur on a sample by sample basis, naturally (not variable by variable). Be aware that if you have response variables (for PLS) these will also be normalized, since the normalization function does not distinguish them.
 
-After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` OR `pls_result` has the values for each sample witin the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing.
+After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` OR `pls_result` has the values for each sample witin the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing for PCA.
 
 ```python
 pca_result, loadings_df, loadings = chromapy.pca(df_normalized)
 ```
 
-The only difference for PLS is that it requires a `responses` list, where the names of each response variable are. Also, it returns a `response_df` rather than the scikit-lean boject. For 4 response variables:
+The only difference for PLS is that it requires a `responses` list, where the names of each response variable are. Also, it returns a `response_df` rather than the scikit-lean object. For 4 response variables:
 
 ```python
 responses = ["Response1", "Response2", "Response3", "Response4"]
-pls_result, loadings_df, response_df = chromapy.pls(df_normalized)
+pls_result, loadings_df, response_df = chromapy.pls(df_normalized, responses)
 ```
 
 Finally we can graph the plot. There is one function for PCA and another for PLS, and they both have many options (check the source code), but this is an easy usage case:
@@ -201,7 +201,7 @@ plot = chromapy.pca_plot(pca_result, loadings_df, loadings, output="sample_pca_o
 And for PLS:
 
 ```python
-plot = chromapy.pls_plot(pls_result, loadings_df, response=response_df, labels=True, loadings_scale=34, write_loadings = True, output="Sample_PLS_outut.svg")
+plot = chromapy.pls_plot(pls_result, loadings_df, response_df, labels=True, loadings_scale=34, write_loadings = True, output="Sample_PLS_outut.svg")
 ```
 
 Only the three first arguments are mandatory, all else will default if you don't pass anything. On Biplots (both samples and loadings) you will have to scale up or down the loadings to correctly fit the plot axis. This is done with the `loadings_scale` option, as shown. When the graph is shown on screen, you can save directly, so the `output` option is actually unnecessary.
@@ -215,7 +215,7 @@ Built on top of other DOE packages, provides both matrix design as well as data 
 
 Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python. The first time you run the code, it should install the required R dependencies.
 
-#### Instructions
+#### Generating a Design Matrix
 
 The input is very simple. For **two level designs** (Plackett-burman and full factorial), simply do:
 
@@ -228,6 +228,10 @@ The input is very simple. For **two level designs** (Plackett-burman and full fa
 
 
 You can name the variables whatever you want (try avoiding special symbols, like $#|\, etc. The values need not be numbers, they can be for example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You also don't need to put the low value on top and the high value on the bottom. Check the sample file to get an idea.
+
+```python
+
+```
 
 For **Box-Behnken designs**, the input file changes slightly:
 
@@ -252,6 +256,8 @@ So if you put:
 
 
 The values for temperature will be 200, 250 and 300.
+
+### Calculating Main Effect of Two-level Designs
 
 For calculating the **main effect** you have to input the .csv with the MATRIX (-1 and 1) which you got when you generated the design, and a second .csv with a single column entitled "Results" (capital R):
 
