@@ -323,4 +323,9 @@ chromapy.rsm_plot(design_rsm, pdf = "Output_File.pdf")
 
 ## Quantification Assistant <a name="quantification"></a>
 
+
+
+
 ## Chromatography Calculators <a name="calculators"></a>
+
+This is an extremely simple piece of code. Check the source for instructions or use the script.
