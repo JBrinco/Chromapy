@@ -275,7 +275,7 @@ print(BBDesign)
 
 ### Calculating Main Effect of Two-level Designs
 
-For calculating the **main effect** you have to input the **Matrix** (-1 and 1, NOT the design) which you got when you generated the design, and a single column entitled "Results" (capital R):
+For calculating the **main effect** you have to input the **Matrix** (-1 and 1, NOT the design) which you got when you generated the design, and another file or dataframe with a single column whose first entry is "Results" (capital R):
 
 
 | Results |
@@ -308,6 +308,15 @@ design, matrix = chromapy.plackett_burman("Examples_Templates/DOE/DOE_Input.csv"
 
 results = pd.read_csv("Examples_Templates/DOE/DOE_results.csv")
 main_effect = chromapy.main_effect(results, matrix, dataframe = True)
+```
+
+### Generating Response Surfaces
+
+To generate response surfaces you can again input either .csv files, or handle everything internally. There is a function called `add_results` which takes the R object with the design and a list with the result values, and joins them in a propperly formatted object to perform response-surface moddeling. But by far the easiest way is to output the Box-Behnken design to a csv file (named `Whatever_file_name_suits_you.csv` above) and then add your results to this file by adding a column at the end entitled `Results`. Check the file `BBD_with_results.csv` to get an idea.
+
+```python
+design_rsm = chromapy.rsm("Examples_Templates/DOE/BBD_with_results.csv", "Examples_Templates/DOE/BBD_Input.csv")
+chromapy.rsm_plot(design_rsm, pdf = "Output_File.pdf")
 ```
 
 
