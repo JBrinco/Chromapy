@@ -312,7 +312,7 @@ main_effect = chromapy.main_effect(results, matrix, dataframe = True)
 
 ### Generating Response Surfaces
 
-To generate response surfaces you can again input either .csv files, or handle everything internally. There is a function called `add_results` which takes the R object with the design and a list with the result values, and joins them in a propperly formatted object to perform response-surface moddeling. But by far the easiest way is to output the Box-Behnken design to a csv file (named `Whatever_file_name_suits_you.csv` above) and then add your results to this file by adding a column at the end entitled `Results`. Check the file `BBD_with_results.csv` to get an idea.
+To generate response surfaces you can again input either .csv files, or handle everything internally. There is a function called `chromapy.add_results` which takes the R object with the design and a list with the result values, and joins them in a propperly formatted object to perform response-surface moddeling. But by far the easiest way is to output the Box-Behnken design to a csv file (named `Whatever_file_name_suits_you.csv` above) and then add your results to this file by adding a column at the end entitled `Results`. Check the file `BBD_with_results.csv` to get an idea.
 
 ```python
 design_rsm = chromapy.rsm("Examples_Templates/DOE/BBD_with_results.csv", "Examples_Templates/DOE/BBD_Input.csv")
@@ -323,7 +323,7 @@ chromapy.rsm_plot(design_rsm, pdf = "Output_File.pdf")
 
 ## Quantification Assistant <a name="quantification"></a>
 
-The functionality of this submodule is extremely simple. The major requirement is that the input files are correctly formatted. There are two functions: `quant_import` and `quantification`. `quant_import`simply takes .csv or spreadsheet files and turns them into dataframes for the `quantification` function.
+The functionality of this submodule is extremely simple. The major requirement is that the input files are correctly formatted. There are two functions: `chromapy.quant_import` and `chromapy.quantification`. `chromapy.quant_import`simply takes .csv or spreadsheet files and turns them into dataframes for the `chromapyquantification` function.
 
 ```python
 import chromapy
@@ -332,7 +332,7 @@ calibration_df, samples_df = chromapy.quant_import("Examples_Templates/Quantific
 quant_results = chromapy.quantification(calibration_df, samples_df) # quant_results contains the results
 ```
 
-`quant_import` can be bypassed, and only exists if for some reason you want to be able to pass dataframes directly to `quantification`, without calling `quant_import`. However, if you are using spreadsheet type files, you can simply do:
+`chromapy.quant_import` can be bypassed, and only exists if for some reason you want to be able to pass dataframes directly to `chromapy.quantification`, without calling `chromapy.quant_import`. However, if you are using spreadsheet type files, you can simply do:
 
 ```python
 import chromapy
@@ -344,7 +344,7 @@ quant_results = chromapy.quantification("Examples_Templates/Quantification/calib
 ```python
 import chromapy
 
-quant_results = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples_no_dilution.csv", file_input = True, int_standard = True, print_results = "My_Results.txt")
+quant_results = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True, int_standard = True, print_results = "My_Results.txt")
 quant_results.to_csv("Quantification_results.csv")
 ```
 
@@ -352,6 +352,15 @@ If you run the sript multiple times with the same file name (in this case `My_Re
 
 ### Input file formatting
 
+The script requires two files. If you are inputting the dataframes directly to `chromapy.quantification`, the requirements are exactly the same. The calibration file, with the calibration data (duh) should look like this:
+
+
+| ConcIS | SignalIS | Conc  | Compound1Name | Compound2Name | Compound3Name | ...  |
+| ------ | ----     | ----  | ----          | ----          | ---           | ---  |
+| 20     | 12445    | 10    | 340           | 345932        | 3432          |      |
+| 20     | 30592    | 20    | 985           | 894934        | 9583          |      |
+| 20     | 19485    | 30    | 1459          | 1313294       | 14050         |      |
+| ...    |          |       |               |               |               |      |
 
 
 
