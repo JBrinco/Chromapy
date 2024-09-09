@@ -6,3 +6,4 @@ python chromacalc.py 0.25 -f 30
 python chromacalc.py -s Examples_Templates/ChromaCalc/calculator_input.csv
 python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o "TEST"
 python quantification.py Examples_Templates/Quantification/calibration.csv -s Examples_Templates/Quantification/samples.csv -v
+e
