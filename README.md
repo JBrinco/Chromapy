@@ -352,7 +352,7 @@ If you run the sript multiple times with the same file name (in this case `My_Re
 
 ### Input file formatting
 
-The script requires two files. If you are inputting the dataframes directly to `chromapy.quantification`, the requirements are exactly the same. The calibration file, with the calibration data (duh) should look like this:
+The script requires two files. If you are inputting the dataframes directly to `chromapy.quantification`, the requirements are exactly the same. The calibration file, with the calibration data (duh) should look like this, with internal standard:
 
 
 | ConcIS | SignalIS | Conc  | Compound1Name | Compound2Name | Compound3Name | ...  |
@@ -362,6 +362,38 @@ The script requires two files. If you are inputting the dataframes directly to `
 | 20     | 19485    | 30    | 1459          | 1313294       | 14050         |      |
 | ...    |          |       |               |               |               |      |
 
+
+The columns need not be in any particular order, but the column names are important:
+
+- `ConcIS` The concentration of the internal standard. Only required if `int_standard = True`;
+- `SignalIS` The signal of the internal standard. Only required if `int_standard = True`;
+- `Conc` The concentration of the compound
+- `CompoundxName` The name you want to appear on the calibration curve image and results for that compound. Can be whatever you want.
+
+The script wil always look for the string `Conc` (CASE SENSITIVE!) in the dataframe header. If you set `int_standard = True` it will also look for `ConcIS` and `SignalIS`. Otherwise, these need not be present. Notice that to use one row for many compounds they all need to be at the same concentration. If you have different concentrations for different compounds just calibrate them in different runs of the script. If you leave blank values the script will not function properly. Also, you cannot add zeros because they will be assumed as signal values.
+
+The samples file is similar, and must have exactly the same comound names as the calibration file. It can have more, or in a differen order, but the program will look for the strings which it already "calibrated". So if in your calibration file you have `Caffeine`, then it will look for that exact word (case sensitive!) in the samples dataframe. The samples file requires an aditional column which should be labeled `Sample`. An example with sample triplicates and no internal standard:
+
+
+| Sample |   Compound1Name | Compound2Name | Compound3Name | ... |
+| ------ |  ----           | ----          | ---           | --- |
+| Mekong |  34990          | 349239        | 0             |     |
+| Mekong |  24901          | 240320        | 0             |     |
+| Mekong |  50320          | 324599        | 0             |     |
+| Danube |  0              | 239492394     | 0             |     |
+| Danube |  0              | 33294923      | 0             |     |
+| Danube |  0              | 3240004302    | 0             |     |
+| Tagus  |  12390          | 34009         | 450           |     |
+| Tagus  |  3400           | 320543        | 304           |     |
+| Tagus  |  34000          | 234000        | 100           |     |
+| ...    |                 |               |               |     |
+
+The column names:
+
+- `Sample` The sample name. For replicates, use the same name and the sript will calculate the average and standard deviation.
+- `ConcIS` The concentration of the internal standard. Only required if `int_standard = True`;
+- `SignalIS` The signal of the internal standard. Only required if `int_standard = True`;
+- `CompoundxName` The name you want to appear on the calibration curve image and results for that compound. Can be whatever you want.
 
 
 
