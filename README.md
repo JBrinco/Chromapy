@@ -323,13 +323,13 @@ chromapy.rsm_plot(design_rsm, pdf = "Output_File.pdf")
 
 ## Quantification Assistant <a name="quantification"></a>
 
-The functionality of this submodule is extremely simple. The major requirement is that the input files are correctly formatted. There are two functions: `quant_import` and `quantification`. `quant_import`simply takes .csv or spreadsheet files and turns it into dataframes for the `quantification` function.
+The functionality of this submodule is extremely simple. The major requirement is that the input files are correctly formatted. There are two functions: `quant_import` and `quantification`. `quant_import`simply takes .csv or spreadsheet files and turns them into dataframes for the `quantification` function.
 
 ```python
 import chromapy
 
 calibration_df, samples_df = chromapy.quant_import("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv")
-quant_df = chromapy.quantification(calibration_df, samples_df) # quant_df contains the results
+quant_results = chromapy.quantification(calibration_df, samples_df) # quant_results contains the results
 ```
 
 `quant_import` can be bypassed, and only exists if for some reason you want to be able to pass dataframes directly to `quantification`, without calling `quant_import`. However, if you are using spreadsheet type files, you can simply do:
@@ -337,19 +337,23 @@ quant_df = chromapy.quantification(calibration_df, samples_df) # quant_df contai
 ```python
 import chromapy
 
-quant_df = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True)
+quant_results = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True)
 ```
- By default, the program assumes no internal standard, and does not write an output file. You can change this. For example:
+ By default, the program assumes no internal standard, and does not write anything to an output file. You can change this. For example:
 
 ```python
 import chromapy
 
-quant_df = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True, int_standard = True, print_results = "My_Results.txt")
+quant_results = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples_no_dilution.csv", file_input = True, int_standard = True, print_results = "My_Results.txt")
+quant_results.to_csv("Quantification_results.csv")
 ```
 
-If you run the sript multiple times with the same file name (in this case `My_Results.txt`) it will append to that file, with a date and time tag for each run.
+If you run the sript multiple times with the same file name (in this case `My_Results.txt`) it will append to that file, with a date and time tag for each run. By default, the sript does not print the quantification results of the samples, they will simply be in `quant_results`. Here we create a file `Quantification_results.csv` which has the mean and standard deviation for each compound in each sample. `My_Results.txt` (or whatever name you give it) will have the method performance parameters for each compound calibrated).
 
 ### Input file formatting
+
+
+
 
 
 ## Chromatography Calculators <a name="calculators"></a>
