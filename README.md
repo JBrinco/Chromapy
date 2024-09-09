@@ -393,8 +393,9 @@ The column names:
 - `Sample` The sample name. For replicates, use the same name and the sript will calculate the average and standard deviation.
 - `ConcIS` The concentration of the internal standard. Only required if `int_standard = True`;
 - `SignalIS` The signal of the internal standard. Only required if `int_standard = True`;
-- `CompoundxName` The name you want to appear on the calibration curve image and results for that compound. Can be whatever you want.
+- `CompoundxName` The name of the compound. Must be EXACTLY the same as that of the calibration file, because the script will search for that name.
 
+Any extra columns on the samples file (such as compounds not being calibrated in that run) will be ignored.
 
 
 ## Chromatography Calculators <a name="calculators"></a>
