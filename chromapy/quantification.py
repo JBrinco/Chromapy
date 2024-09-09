@@ -59,16 +59,22 @@ def quant_import(calibration_file, samples_file):
 
 
 
-def quantification(calibration_df, samples_df, int_standard = True, verbose = False, print_results = "None"):
+def quantification(calibration_df, samples_df, file_input = False, int_standard = False, verbose = False, print_results = "None"):
     """
     Calculates the results and merit parameters.
-    Requires a dataframe with calibration values and one with samples (see example files)
+    Requires a dataframe with calibration values and one with samples (see example files).
 
     TO-DO:
     Put mean and st-dev calculation within the sample loop rather than at the end, and add the results to the print_results file.
 
     """
     ################PARSER###################
+
+    #If file input is set to True, will assume calibration_df and samples_df to be file names, and will cal quant_inport function above
+
+    if file_input == True:
+        calibration_df, samples_df = quant_import(calibration_df, samples_df)
+
 
     #Parse the file header and find compound names!
     index = 0

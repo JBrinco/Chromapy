@@ -1,0 +1,118 @@
+
+
+
+
+
+
+##############################
+Chromapy Quantification ran on: 09-09-2024 14:07:10
+##############################
+
+---------------------
+Captan
+---------------------
+Model parameters:
+
+Slope: 5282.25649
+Intercept: -676339.03972
+Coeficient of determination: 0.84075
+Limit of Detection: 0.43304
+Limit of Quantification: 1.31225
+---------------------
+Terbutylazine
+---------------------
+Model parameters:
+
+Slope: 7479.43705
+Intercept: -812275.40205
+Coeficient of determination: 0.89930
+Limit of Detection: 0.33295
+Limit of Quantification: 1.00894
+---------------------
+Metolachlor
+---------------------
+Model parameters:
+
+Slope: 5833.55270
+Intercept: -433255.46800
+Coeficient of determination: 0.88137
+Limit of Detection: 0.36503
+Limit of Quantification: 1.10616
+
+
+
+
+
+##############################
+Chromapy Quantification ran on: 09-09-2024 14:07:14
+##############################
+
+---------------------
+Captan
+---------------------
+Model parameters:
+
+Slope: 5282.25649
+Intercept: -676339.03972
+Coeficient of determination: 0.84075
+Limit of Detection: 0.43304
+Limit of Quantification: 1.31225
+---------------------
+Terbutylazine
+---------------------
+Model parameters:
+
+Slope: 7479.43705
+Intercept: -812275.40205
+Coeficient of determination: 0.89930
+Limit of Detection: 0.33295
+Limit of Quantification: 1.00894
+---------------------
+Metolachlor
+---------------------
+Model parameters:
+
+Slope: 5833.55270
+Intercept: -433255.46800
+Coeficient of determination: 0.88137
+Limit of Detection: 0.36503
+Limit of Quantification: 1.10616
+
+
+
+
+
+##############################
+Chromapy Quantification ran on: 09-09-2024 14:11:33
+##############################
+
+---------------------
+Captan
+---------------------
+Model parameters:
+
+Slope: 5282.25649
+Intercept: -676339.03972
+Coeficient of determination: 0.84075
+Limit of Detection: 0.43304
+Limit of Quantification: 1.31225
+---------------------
+Terbutylazine
+---------------------
+Model parameters:
+
+Slope: 7479.43705
+Intercept: -812275.40205
+Coeficient of determination: 0.89930
+Limit of Detection: 0.33295
+Limit of Quantification: 1.00894
+---------------------
+Metolachlor
+---------------------
+Model parameters:
+
+Slope: 5833.55270
+Intercept: -433255.46800
+Coeficient of determination: 0.88137
+Limit of Detection: 0.36503
+Limit of Quantification: 1.10616

@@ -323,7 +323,33 @@ chromapy.rsm_plot(design_rsm, pdf = "Output_File.pdf")
 
 ## Quantification Assistant <a name="quantification"></a>
 
+The functionality of this submodule is extremely simple. The major requirement is that the input files are correctly formatted. There are two functions: `quant_import` and `quantification`. `quant_import`simply takes .csv or spreadsheet files and turns it into dataframes for the `quantification` function.
 
+```python
+import chromapy
+
+calibration_df, samples_df = chromapy.quant_import("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv")
+quant_df = chromapy.quantification(calibration_df, samples_df) # quant_df contains the results
+```
+
+`quant_import` can be bypassed, and only exists if for some reason you want to be able to pass dataframes directly to `quantification`, without calling `quant_import`. However, if you are using spreadsheet type files, you can simply do:
+
+```python
+import chromapy
+
+quant_df = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True)
+```
+ By default, the program assumes no internal standard, and does not write an output file. You can change this. For example:
+
+```python
+import chromapy
+
+quant_df = chromapy.quantification("Examples_Templates/Quantification/calibration.csv", "Examples_Templates/Quantification/samples.csv", file_input = True, int_standard = True, print_results = "My_Results.txt")
+```
+
+If you run the sript multiple times with the same file name (in this case `My_Results.txt`) it will append to that file, with a date and time tag for each run.
+
+### Input file formatting
 
 
 ## Chromatography Calculators <a name="calculators"></a>
