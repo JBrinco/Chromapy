@@ -1,0 +1,773 @@
+<p align="center">
+<img src="Examples_Templates/Images/Chromapy.png" alt="Chromapy">
+</p>
+<p>Python Scripts for Chromatographic Data Processing</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol type="1">
+<li><a href="#newcomers">READ THIS FIRST</a></li>
+<li><a href="#overview">Overview of Functionality</a>
+<ol type="1">
+<li><a href="#overview_multivariate">Multivariate Analysis</a></li>
+<li><a href="#overview_doe">Design of Experiments</a></li>
+<li><a href="#overview_quantification">Quantification Assistant</a></li>
+<li><a href="#overview_calculators">Chromatography Calculators</a></li>
+</ol></li>
+<li><a href="#structure">Package Structure</a></li>
+<li><a href="#manual">Manual</a>
+<ol type="1">
+<li><a href="#scripts">Scripts</a></li>
+<li><a href="#multivariate">Multivariate Analysis</a></li>
+<li><a href="#doe">Design of Experiments</a></li>
+<li><a href="#quantification">Quantification Assistant</a></li>
+<li><a href="#calculators">Chromatography Calculators</a></li>
+</ol></li>
+</ol>
+<h1 id="newcomers-read-this">Newcomers, read this!
+<a name="newcomers"></a></h1>
+<p>Thank you for your interest. This package can help you in the
+treatment of chromatographic data and the like. It does NOT read or
+manipulate chromatograms directly (the program that came with your
+instrument can do it better anyways, and there is always OpenChrom). You
+must integrate your chromatograms, and add that data (in the form of
+.csv or .xlsx) to this program.</p>
+<p>At heart, this is simply an attempt to make a free software package
+for chromatography calculations. The whole thing is just an easier way
+to interact with already written libraries, so that you can seamlesly
+input your data and get a chewed-out result. However, it is obviously
+your responsibility to know what you are getting and how to interpret it
+(I mostly don’t, but you can do better than me).</p>
+<p>If you are familiar with the Python programming language, the module
+will be very easy to use, and you can change it to your liking, just as
+long as you abide by the GNU General Public License v3. If you are just
+using the software, then you can do whatever you want (really) so long
+as you clearly mention you used it in your publications (this is more
+for the sake of replicability than my own ego, I promise…). However, if
+you are changing the software or oherwise publishing it, you must abide
+by the license, whose most important feature is that it requires all
+derivatives to release the source code.</p>
+<p>If you are not familiar with any of this, and are wondering what the
+heck is this website GitHub and why do I care, then you can also benefit
+from this package. There are several scripts that can help you (for the
+command line).</p>
+<p>All the documentation is in this page. Specific tinkering will
+require you to look into the code… and change it! It’s not a bomb, you
+know? Worst that can happen is it stops working, and if that causes you
+to get up from the computer and go look at some trees, fine by me!</p>
+<p>In section <strong>Overview of Functionality</strong> you can find a
+simple description of the things this software can do. <strong>Package
+Structure</strong> describes, well, the package structure, <em>i.
+e.</em> in what files and directories is what. The remaining sections
+descibe each sub-module in greater detail.</p>
+<p><strong>A Disclamer:</strong> This is a very small project written by
+an amateur who doesn’t even like computers that much. I’ve tried my best
+to make sure that when the software does work, it will give you correct
+results. However, if something does not work, you can just look into the
+code. It really is relatively simple.</p>
+<hr />
+<h1 id="overview-of-functionality">Overview of Functionality
+<a name="overview"></a></h1>
+<p>This section presents a simple description of Chromapy: its structure
+and functionality. The program is divided into four submodules: -
+<strong>Multivariate Analysis</strong> - <strong>Design of
+Experiments</strong> - <strong>Quantification Assistant</strong> -
+<strong>Chromatography Calculators</strong></p>
+<h2 id="multivariate-analysis">Multivariate Analysis
+<a name="overview_multivariate"></a></h2>
+<p><img src="Examples_Templates/Images/PCA.png" class="center" width="400" alt="An impressive PCA biplot with loadings colored by functional group"></p>
+<p>This submodule can apply some types of multivariate analysis methods
+mostly for dimensionality reduction. At the moment it does principal
+component analysis (PCA) and partial least squares (PLS). It can: -
+Normalize data according to several different algorithms; - Calculate
+principal components for PCA and PLS; - Plot the results in several
+different ways (loadings, samples, biplot…)</p>
+<h2 id="design-of-experiments">Design of Experiments
+<a name="overview_doe"></a></h2>
+<p><img src="Examples_Templates/Images/RSM_Example.png" class="center" width="400" alt="A really impressive although empty response surface"></p>
+<p>This submodule will assist in the use of experimental designs from
+beginning to end. It can: - Generate several experimental design
+matrixes: full factorial, Plackett-Burman and Box-Behnken (used for
+response surface modelling); - Calculate main effect for the screening
+designs (two level full factorial and Plackett-Burman); - Perform
+response surface moddeling for a Box-Behnken design;</p>
+<p>This is by far the most complex submodule, but using it is easy
+enough. However, one must know the basic theory of experimental design
+in order to avoid mistakes (something I’m very prone to). In the future
+I might implement the calculation of statistical significance for main
+effects in screening designs.</p>
+<h2 id="quantification-assistant">Quantification Assistant
+<a name="overview_quantification"></a></h2>
+<p><img src="Examples_Templates/Images/Calibration.png" class="center" width="400" alt="Simple calibration..."></p>
+<p>Automatic quantification from signal values (does not perform
+integration). Provides also Recovery calculation and some method
+performance parameters such as detection limits (calculated from the
+calibration curve, which might not be the ideal method. See below).</p>
+<h2 id="chromatography-calculators">Chromatography Calculators
+<a name="overview_calculators"></a></h2>
+<p>This is a tiny tiny piece of code. It can calculate the volume of
+solvent used by an HPLC based on the eluent program, which may be
+useful, for example in order to calculate green analytical chemistry
+metrics for several methods. It can also transform GC mobile phase
+linear velocity into flow and vice versa for open tubular columns. This
+is very basic stuff, but someone might find it useful.</p>
+<hr />
+<h1 id="package-structure">Package Structure
+<a name="structure"></a></h1>
+<h3
+id="there-are-two-sides-to-this-package-a-module-and-a-collection-of-scripts.">There
+are two sides to this package: A module and a collection of
+scripts.</h3>
+<p>The module is useful for those familiar with the python programming
+language, as it can be used in the creation of custom scripts and
+routines. The code can be found in the folder <code>chromapy</code>.</p>
+<p>The Scripts are intended for easy command line use, without requiring
+any specialized computer knowledge. I’ve put then in the parent folder
+so that people can just download the whole repository and run them
+without difficulty. Currently there are these scripts:
+<code>chromacalc.py</code> <code>DOE.py</code> <code>PCA.py</code>
+<code>PLS.py</code> and <code>Quantification.py</code>. The
+<code>.py</code> means these are python source code files, which your
+python interperter can read.</p>
+<p>The scripts are actually just a way to interface with the module (in
+the <code>chromapy</code> folder) through the command line.</p>
+<p>There is also an <code>Examples_Templates</code> folder which has
+example input and output files for every function the software performs.
+Please look into these carefully, because the program requires very
+specific inputs to work prperly. This is explained in the detailed
+sections for each submodule.</p>
+<p>The file called <code>Calls_functioning</code> has several examples
+of command line calls which will give you a result. Use them as examples
+to find out how the program works.</p>
+<p>There is also a <code>Windows</code> folder with two files, which
+will help you open an anaconda instance in Microsoft Windows.</p>
+<hr />
+<h1 id="manual">Manual <a name="manual"></a></h1>
+<p>Each submodule is treated separately, and functions (mostly)
+independently. For fine-grained control or more comments/instructions
+check the source code. Also, the examples and templates are your
+friends, use them. The first subsection deals with using the scripts,
+which will be most convenient for users not familiar with python. The
+following explanations for each submodule deal mostly with interacting
+directly with python. The module has several dependencies, which you
+have to figure out how to install (just google it). These are:
+<code>numpy</code>, <code>seaborn</code>, <code>scikit-learn</code> and
+<code>rpy2</code>.</p>
+<h2 id="scripts">Scripts <a name="scripts"></a></h2>
+<p>If you want to use the scripts, you can pass the option -h to get
+help and guidance. For example, if you want to use the experimental
+design module, just open a terminal window in the same folder as the
+scripts and write:</p>
+<pre class="shell"><code>python DOE.py -h</code></pre>
+<p>It should return a small “manual” for that script (not for the module
+itself!). Equally, you can do <code>python PCA.py -h</code>,
+<code>python PLS.py -h</code>, <code>python chromacalc.py -h</code> or
+<code>python quantification.py -h</code>. The easiest way to use the
+scripts is to download this whole repository and then add your datafiles
+to the parent directory (the one called Chromapy-master), that way you
+can just call them easily, as in:</p>
+<pre class="shell"><code>python DOE.py -b BBD_Input.csv</code></pre>
+<p>Where <code>BBD_Input.csv</code> is your input file with the varaible
+names and values (check the sample file at
+<code>Examples_Templates/DOE</code>). By default, it will return a file
+called <code>Box-Behnken_Design.csv</code>. The DOE.py script uses
+different options to select what you want. <code>-p</code>
+<code>-f</code> and <code>-b</code> are for generating Plackett-Burman,
+Full-factorial and Box-Behnken designs, respectively. <code>-m</code> is
+for calculating the main effect of Plackett-Burman or two-level
+Full-factorial designs, and <code>-r</code> does response-surface
+modelling for Box-Behnken designs.</p>
+<p>You can simply run each line of code from
+<code>Calls_functioning</code> and it should work. For example:</p>
+<pre class="shell"><code>python PLS.py &quot;Examples_Templates/Multivariate/wine_data_PLS.csv&quot; -r 3 -s 10 -o &quot;TEST&quot;</code></pre>
+<p>Will give you a partial least squares biplot for 3 response
+variables, with the loadings scaled to 10x (to fit the biplot) and an
+output file called <code>TEST.png</code>.</p>
+<h2 id="multivariate-analysis-1">Multivariate Analysis
+<a name="multivariate"></a></h2>
+<p>Options and explanations are given within each function in the source
+code. This is a quick exposition of the functionality. You can use the
+pre-made script for an easier time, especially if you don’t understand
+python (see above).</p>
+<p>First, the file should be imported:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> chromapy.pca_import(<span class="st">&quot;Examples_Templates/Multivariate/wine_data.csv&quot;</span>)</span></code></pre></div>
+<p>You do NOT need to use .csv files for most functions, but it is
+advised. Aso supported are: .xls, .xlsx, .xlsm, .xlsb, .odf, .ods,
+.odt</p>
+<p>The input file should have:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>Type</th>
+<th>Var1</th>
+<th>Var2</th>
+<th>Var3</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>water1</td>
+<td>S</td>
+<td>12.5</td>
+<td>22.1</td>
+<td>0.01</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>water2</td>
+<td>G</td>
+<td>11.7</td>
+<td>35.2</td>
+<td>0.03</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p><code>Var1</code>, <code>Var2</code>, etc. take any name or number
+you want, and this will be the name given to the loadings in the biplot.
+The <code>Type</code> is optional, and will separate the samples by
+color and shape, as well as print a label.</p>
+<p>For PLS, you should add the response columns as
+<code>Response1</code>, etc. So for two response variables, do:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>Type</th>
+<th>Response1</th>
+<th>Response2</th>
+<th>Var1</th>
+<th>Var2</th>
+<th>Var3</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>water1</td>
+<td>S</td>
+<td>122.5</td>
+<td>0.002</td>
+<td>12.5</td>
+<td>22.1</td>
+<td>0.01</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>water2</td>
+<td>G</td>
+<td>101.7</td>
+<td>0.085</td>
+<td>11.7</td>
+<td>35.2</td>
+<td>0.03</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For ease of use and avoidance of errors, please use the sample.csv
+file provided! You can save it as .xlsx if you wish.</p>
+<p>Then, we can normalize if we want:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_normalized <span class="op">=</span> chromapy.normalize(df, normalization<span class="op">=</span><span class="st">&#39;area&#39;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_normalized)</span></code></pre></div>
+<p>The <code>normalization</code> option can be set to: - “normalize” -
+Applies the normalize function from scikitlearn, documentation <a
+href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html">here</a>
+- “standard” - This is the default, if no option is given. Documentation
+<a
+href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">here</a>
+- “minmax” - Applies the MinMaxScaler. Documentation <a
+href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html">here</a>
+- “area” - Will make the sum of all values in a sample equal to 100.
+Equivalent to using relative percentages of a chromatogram, <em>ie.</em>
+assuming the total area is 100%, and the area of each peak is a certain
+percentage of that.</p>
+<p>Normalizations occur on a sample by sample basis, naturally (not
+variable by variable). Be aware that if you have response variables (for
+PLS) these will also be normalized, since the normalization function
+does not distinguish them.</p>
+<p>After normalization, you can calculate the principal components. This
+function will return 3 objects: <code>pca_result</code> OR
+<code>pls_result</code> has the values for each sample witin the
+principal component space. <code>loadings_df</code> is a nicely
+formatted dataframe with each loading (variable) and its respective
+contribution to each principal component, and <code>loadings</code> is
+the actual object created by scikit-learn’s computations, which is used
+internally when graphing for PCA.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pca_result, loadings_df, loadings <span class="op">=</span> chromapy.pca(df_normalized)</span></code></pre></div>
+<p>The only difference for PLS is that it requires a
+<code>responses</code> list, where the names of each response variable
+are. Also, it returns a <code>response_df</code> rather than the
+scikit-lean object. For 4 response variables:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>responses <span class="op">=</span> [<span class="st">&quot;Response1&quot;</span>, <span class="st">&quot;Response2&quot;</span>, <span class="st">&quot;Response3&quot;</span>, <span class="st">&quot;Response4&quot;</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pls_result, loadings_df, response_df <span class="op">=</span> chromapy.pls(df_normalized, responses)</span></code></pre></div>
+<p>Finally we can graph the plot. There is one function for PCA and
+another for PLS, and they both have many options (check the source
+code), but this is an easy usage case:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> chromapy.pca_plot(pca_result, loadings_df, loadings, output<span class="op">=</span><span class="st">&quot;sample_pca_output.svg&quot;</span>, loadings_scale<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div>
+<p>And for PLS:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> chromapy.pls_plot(pls_result, loadings_df, response_df, labels<span class="op">=</span><span class="va">True</span>, loadings_scale<span class="op">=</span><span class="dv">34</span>, write_loadings <span class="op">=</span> <span class="va">True</span>, output<span class="op">=</span><span class="st">&quot;Sample_PLS_outut.svg&quot;</span>)</span></code></pre></div>
+<p>Only the three first arguments are mandatory, all else will default
+if you don’t pass anything. On Biplots (both samples and loadings) you
+will have to scale up or down the loadings to correctly fit the plot
+axis. This is done with the <code>loadings_scale</code> option, as
+shown. When the graph is shown on screen, you can save directly, so the
+<code>output</code> option is actually unnecessary.</p>
+<p>You can (and should) save the graphs as .svg files, which you can
+then open in inkscape and edit to your heart’s content! Or if you use
+LaTeX, which does not support .svg directly, you can convert them to
+.pdf in inkscape.</p>
+<h2 id="design-of-experiments-1">Design of Experiments
+<a name="doe"></a></h2>
+<p>Built on top of other DOE packages, provides both matrix design as
+well as data analysis and response surfaces. Supports Placket-Burman and
+two-level full factorial designs for screening. Also provides
+Box-Behnken designs for fitting a response surface.</p>
+<p>Most of the code to generate the experimental design matrixes was
+forked from <a
+href="https://github.com/JamesMarshall31/design-of-experiments/">here</a>.
+The response surface fitting is written in the R language and called
+directly from python using the rpy2 library. The reason is because the
+calculations use the excelent R library called rsm, and there is no
+comparable library for python. The first time you run the code, it
+should install the required R dependencies.</p>
+<h3 id="generating-a-design-matrix">Generating a Design Matrix</h3>
+<p>The input is very simple. For <strong>two level designs</strong>
+(Plackett-burman and full factorial), simply do:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable1</th>
+<th>Variable2</th>
+<th>Variable3</th>
+<th>Variable4</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Var1 low value</td>
+<td>Var2 low value</td>
+<td>Var3 low value</td>
+<td>Var4 low value</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Var1 high value</td>
+<td>Var2 high value</td>
+<td>Var3 high value</td>
+<td>Var4 high value</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>You can name the variables whatever you want (try avoiding special
+symbols, like $#|, etc. The values need not be numbers, they can be for
+example: Yes/No, Glass/Plastic, MgSO4/Na2SO4 or something like that. You
+also don’t need to put the low value on top and the high value on the
+bottom. Check the sample file to get an idea.</p>
+<p>To generate a design is simple. Both the Plackett-Burman and 2-level
+full factorial functions will return a design dataframe with the
+experiments to be performed and their variable values, as well as the
+matrix of -1 and 1 which was used to produce it. The matrix is required
+for further calculations, such as main effect. Plackett-Burman requires
+a second input, which will be an integer of how many experiments you
+want to perform. This value should be a multiple of four, but the
+program will round up if needed. It should also be larger than the
+number of variables, and will not work otherwise.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>design, matrix <span class="op">=</span> chromapy.plackett_burman(<span class="st">&quot;Examples_Templates/DOE/DOE_Input.csv&quot;</span>, <span class="dv">12</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(design)</span></code></pre></div>
+<p>For <strong>Box-Behnken designs</strong>, the input file changes
+slightly:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable1</th>
+<th>Variable2</th>
+<th>Variable3</th>
+<th>Variable4</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Var1 center value</td>
+<td>Var2 center value</td>
+<td>Var3 center value</td>
+<td>Var4 center value</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Var1 deviation value</td>
+<td>Var2 deviation value</td>
+<td>Var3 deviation value</td>
+<td>Var4 deviation value</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>So if you put:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>250</td>
+</tr>
+<tr class="even">
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<p>The values for temperature will be 200, 250 and 300.</p>
+<p>To generate the experiment matrix:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>BBDesign <span class="op">=</span> chromapy.box_behnken(<span class="st">&quot;Examples_Templates/DOE/BBD_Input.csv&quot;</span>, randomize <span class="op">=</span> <span class="va">False</span>, output <span class="op">=</span> <span class="st">&quot;Whatever_file_name_suits_you.csv&quot;</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(BBDesign)</span></code></pre></div>
+<p><code>BBDesign</code> is an R object created by the <code>rsm</code>
+package, but you can print it just the same. The function will generate
+a .csv output by default, but you can change the name. It will also
+randomize the experiment order by default, but you can set the randomize
+variable to False and then randomize it yourself (which you definitely
+should do).</p>
+<h3 id="calculating-main-effect-of-two-level-designs">Calculating Main
+Effect of Two-level Designs</h3>
+<p>For calculating the <strong>main effect</strong> you have to input
+the <strong>Matrix</strong> (-1 and 1, NOT the design) which you got
+when you generated the design, and another file or dataframe with a
+single column whose first entry is “Results” (capital R):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3583.3</td>
+</tr>
+<tr class="even">
+<td>3945.1</td>
+</tr>
+<tr class="odd">
+<td>2010.4</td>
+</tr>
+<tr class="even">
+<td>9231.8</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>These results must be in the same order as the experiments in the
+matrix. You can input these either by .csv (default) or correctly
+formatted dataframes. If you want to use the .csv, you have to generate
+it with
+<code>matrix.to_csv('Plackett_Burman_matrix.csv', index = False)</code>.
+Using .csv:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>design, matrix <span class="op">=</span> chromapy.plackett_burman(<span class="st">&quot;Examples_Templates/DOE/DOE_Input.csv&quot;</span>, <span class="dv">12</span>) <span class="co">#Generate design</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>matrix.to_csv(<span class="st">&#39;Plackett_Burman_matrix.csv&#39;</span>, index <span class="op">=</span> <span class="va">False</span>) <span class="co">#Convert matrix to .csv</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>main_effect <span class="op">=</span> chromapy.main_effect(<span class="st">&quot;Examples_Templates/DOE/DOE_results.csv&quot;</span>, <span class="st">&quot;Plackett_Burman_matrix.csv&quot;</span>) <span class="co">#Calculate main effect</span></span></code></pre></div>
+<p>Using pandas dataframes:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>design, matrix <span class="op">=</span> chromapy.plackett_burman(<span class="st">&quot;Examples_Templates/DOE/DOE_Input.csv&quot;</span>, <span class="dv">12</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> pd.read_csv(<span class="st">&quot;Examples_Templates/DOE/DOE_results.csv&quot;</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>main_effect <span class="op">=</span> chromapy.main_effect(results, matrix, dataframe <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
+<h3 id="generating-response-surfaces">Generating Response Surfaces</h3>
+<p>To generate response surfaces you can again input either .csv files,
+or handle everything internally. There is a function called
+<code>chromapy.add_results</code> which takes the R object with the
+design and a list with the result values, and joins them in a propperly
+formatted object to perform response-surface moddeling. But by far the
+easiest way is to output the Box-Behnken design to a csv file (named
+<code>Whatever_file_name_suits_you.csv</code> above) and then add your
+results to this file by adding a column at the end entitled
+<code>Results</code>. Check the file <code>BBD_with_results.csv</code>
+to get an idea.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>design_rsm <span class="op">=</span> chromapy.rsm(<span class="st">&quot;Examples_Templates/DOE/BBD_with_results.csv&quot;</span>, <span class="st">&quot;Examples_Templates/DOE/BBD_Input.csv&quot;</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>chromapy.rsm_plot(design_rsm, pdf <span class="op">=</span> <span class="st">&quot;Output_File.pdf&quot;</span>)</span></code></pre></div>
+<h2 id="quantification-assistant-1">Quantification Assistant
+<a name="quantification"></a></h2>
+<p>The functionality of this submodule is extremely simple. The major
+requirement is that the input files are correctly formatted. There are
+two functions: <code>chromapy.quant_import</code> and
+<code>chromapy.quantification</code>.
+<code>chromapy.quant_import</code>simply takes .csv or spreadsheet files
+and turns them into dataframes for the
+<code>chromapyquantification</code> function.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>calibration_df, samples_df <span class="op">=</span> chromapy.quant_import(<span class="st">&quot;Examples_Templates/Quantification/calibration.csv&quot;</span>, <span class="st">&quot;Examples_Templates/Quantification/samples.csv&quot;</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>quant_results <span class="op">=</span> chromapy.quantification(calibration_df, samples_df) <span class="co"># quant_results contains the results</span></span></code></pre></div>
+<p><code>chromapy.quant_import</code> can be bypassed, and only exists
+if for some reason you want to be able to pass dataframes directly to
+<code>chromapy.quantification</code>, without calling
+<code>chromapy.quant_import</code>. However, if you are using
+spreadsheet type files, you can simply do:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>quant_results <span class="op">=</span> chromapy.quantification(<span class="st">&quot;Examples_Templates/Quantification/calibration.csv&quot;</span>, <span class="st">&quot;Examples_Templates/Quantification/samples.csv&quot;</span>, file_input <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div>
+<p>By default, the program assumes no internal standard, and does not
+write anything to an output file. You can change this. For example:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> chromapy</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>quant_results <span class="op">=</span> chromapy.quantification(<span class="st">&quot;Examples_Templates/Quantification/calibration.csv&quot;</span>, <span class="st">&quot;Examples_Templates/Quantification/samples.csv&quot;</span>, file_input <span class="op">=</span> <span class="va">True</span>, int_standard <span class="op">=</span> <span class="va">True</span>, print_results <span class="op">=</span> <span class="st">&quot;My_Results.txt&quot;</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>quant_results.to_csv(<span class="st">&quot;Quantification_results.csv&quot;</span>)</span></code></pre></div>
+<p>If you run the sript multiple times with the same file name (in this
+case <code>My_Results.txt</code>) it will append to that file, with a
+date and time tag for each run. By default, the sript does not print the
+quantification results of the samples, they will simply be in
+<code>quant_results</code>. Here we create a file
+<code>Quantification_results.csv</code> which has the mean and standard
+deviation for each compound in each sample. <code>My_Results.txt</code>
+(or whatever name you give it) will have the method performance
+parameters for each compound calibrated).</p>
+<h3 id="input-file-formatting">Input file formatting</h3>
+<p>The script requires two files. If you are inputting the dataframes
+directly to <code>chromapy.quantification</code>, the requirements are
+exactly the same. The calibration file, with the calibration data (duh)
+should look like this, with internal standard:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ConcIS</th>
+<th>SignalIS</th>
+<th>Conc</th>
+<th>Compound1Name</th>
+<th>Compound2Name</th>
+<th>Compound3Name</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20</td>
+<td>12445</td>
+<td>10</td>
+<td>340</td>
+<td>345932</td>
+<td>3432</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>30592</td>
+<td>20</td>
+<td>985</td>
+<td>894934</td>
+<td>9583</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>19485</td>
+<td>30</td>
+<td>1459</td>
+<td>1313294</td>
+<td>14050</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The columns need not be in any particular order, but the column names
+are important:</p>
+<ul>
+<li><code>ConcIS</code> The concentration of the internal standard. Only
+required if <code>int_standard = True</code>;</li>
+<li><code>SignalIS</code> The signal of the internal standard. Only
+required if <code>int_standard = True</code>;</li>
+<li><code>Conc</code> The concentration of the compound</li>
+<li><code>CompoundxName</code> The name you want to appear on the
+calibration curve image and results for that compound. Can be whatever
+you want.</li>
+</ul>
+<p>The script wil always look for the string <code>Conc</code> (CASE
+SENSITIVE!) in the dataframe header. If you set
+<code>int_standard = True</code> it will also look for
+<code>ConcIS</code> and <code>SignalIS</code>. Otherwise, these need not
+be present. Notice that to use one row for many compounds they all need
+to be at the same concentration. If you have different concentrations
+for different compounds just calibrate them in different runs of the
+script. If you leave blank values the script will not function properly.
+Also, you cannot add zeros because they will be assumed as signal
+values.</p>
+<p>The samples file is similar, and must have exactly the same comound
+names as the calibration file. It can have more, or in a differen order,
+but the program will look for the strings which it already “calibrated”.
+So if in your calibration file you have <code>Caffeine</code>, then it
+will look for that exact word (case sensitive!) in the samples
+dataframe. The samples file requires an aditional column which should be
+labeled <code>Sample</code>. An example with sample triplicates and no
+internal standard:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>Compound1Name</th>
+<th>Compound2Name</th>
+<th>Compound3Name</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mekong</td>
+<td>34990</td>
+<td>349239</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Mekong</td>
+<td>24901</td>
+<td>240320</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Mekong</td>
+<td>50320</td>
+<td>324599</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Danube</td>
+<td>0</td>
+<td>239492394</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Danube</td>
+<td>0</td>
+<td>33294923</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Danube</td>
+<td>0</td>
+<td>3240004302</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Tagus</td>
+<td>12390</td>
+<td>34009</td>
+<td>450</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Tagus</td>
+<td>3400</td>
+<td>320543</td>
+<td>304</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Tagus</td>
+<td>34000</td>
+<td>234000</td>
+<td>100</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The column names:</p>
+<ul>
+<li><code>Sample</code> The sample name. For replicates, use the same
+name and the sript will calculate the average and standard
+deviation.</li>
+<li><code>ConcIS</code> The concentration of the internal standard. Only
+required if <code>int_standard = True</code>;</li>
+<li><code>SignalIS</code> The signal of the internal standard. Only
+required if <code>int_standard = True</code>;</li>
+<li><code>CompoundxName</code> The name of the compound. Must be EXACTLY
+the same as that of the calibration file, because the script will search
+for that name.</li>
+</ul>
+<p>Any extra columns on the samples file (such as compounds not being
+calibrated in that run) will be ignored.</p>
+<h2 id="chromatography-calculators-1">Chromatography Calculators
+<a name="calculators"></a></h2>
+<p>This is an extremely simple piece of code. Check the source for
+instructions or use the script.</p>

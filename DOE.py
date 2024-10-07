@@ -9,6 +9,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("CSV", help="The file with the input data. Can be .csv, .xlsx, .ods, etc. Even for calculating the RSM, this file should be the first one, without the design or the results.")
 parser.add_argument("-p", "--plackett_burman", type=int, help="Plackett Burman design. Requires number of runs (4, 8, 16...) Example: -p 8.")
 parser.add_argument("-f", "--ff2n", help="Full factorial with two levels.", action="store_true")
+parser.add_argument("-F", "--ff", help="Full factorial", action="store_true")
 parser.add_argument("-m", "--main_effect", type=str, help="Calculate main effect. Requires a file name where the results are. other input file must be the matrix with which the results were made. Example: python DOE.py \"DOE_matrix_used.csv\" -m \"DOE_Results_column.csv\"")
 parser.add_argument("-b", "--box_behnken", help="Box-Behnken design. Can accept an argument with the name of the outputfile. Otherwise, default is \"BB-Design.csv\" ", action="store_true")
 parser.add_argument("-R", "--randomize", help="Randomize Box-Behnken design.", action="store_true", default = False)
@@ -51,10 +52,24 @@ if args.ff2n:
     matrix.to_csv('Full_Factorial_2Level.csv', index = False)
 
     if args.verbose == True:
-        print("Full-Factorial Design")
+        print("Full-Factorial two-level Design")
         print(ff2n_design)
         print("\nFull-Factorial Matrix")
         print(matrix)
+
+#Make Full Factorial (2 levels)
+if args.ff:
+    ff_design = chromapy.full_factorial(args.CSV)
+
+    if args.text_name == "NULL":
+        ff_design.to_csv('Full_Factorial_design.csv', index = False)
+    elif args.text_name != "NULL":
+        ff_design.to_csv(args.textname, index = False)
+
+    if args.verbose == True:
+        print("Full-Factorial Design")
+        print(ff_design)
+
 
 
 # Calculate Main Effect
