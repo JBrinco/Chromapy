@@ -3,7 +3,7 @@
 ChromaPython - Chromatography-related Calculators
 #########################################
 
-Copyright (C) 2022-2024 João Brinco
+Copyright (C) 2024 João Brinco
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
 
