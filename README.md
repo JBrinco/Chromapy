@@ -24,17 +24,17 @@ Python Scripts for Chromatographic Data Processing
 
 Thank you for your interest. This package can help you in the treatment of chromatographic data and the like. It does NOT read or manipulate chromatograms directly (the program that came with your instrument can do it better anyways, and there is always OpenChrom). You must integrate your chromatograms, and add that data (in the form of .csv or .xlsx) to this program.
 
-At heart, this is simply an attempt to make a free software package for chromatography calculations. The whole thing is just an easier way to interact with already written libraries, so that you can seamlesly input your data and get a chewed-out result. However, it is obviously your responsibility to know what you are getting and how to interpret it (I mostly don't, but you can do better than me).
+At heart, this is simply an attempt to make a free software package for chromatography calculations. The whole thing is just an easier way to interact with already written libraries, so that you can seamlessly input your data and get a chewed-out result. However, it is obviously your responsibility to know what you are getting and how to interpret it (I mostly don't, but you can do better than me).
 
-If you are familiar with the Python programming language, the module will be very easy to use, and you can change it to your liking, just as long as you abide by the GNU General Public License v3. If you are just using the software, then you can do whatever you want (really) so long as you clearly mention you used it in your publications (this is more for the sake of replicability than my own ego, I promise...). However, if you are changing the software or oherwise publishing it, you must abide by the license, whose most important feature is that it requires all derivatives to release the source code.
+If you are familiar with the Python programming language, the module will be very easy to use, and you can change it to your liking, just as long as you abide by the GNU General Public License v3. If you are just using the software, then you can do whatever you want (really) so long as you clearly mention you used it in your publications (this is more for the sake of replicability than my own ego, I promise...). However, if you are changing the software or otherwise publishing it, you must abide by the license, whose most important feature is that it requires all derivatives to release the source code.
 
 If you are not familiar with any of this, and are wondering what the heck is this website GitHub and why do I care, then you can also benefit from this package. There are several scripts that can help you (for the command line).
 
 All the documentation is in this page. Specific tinkering will require you to look into the code... and change it! It's not a bomb, you know? Worst that can happen is it stops working, and if that causes you to get up from the computer and go look at some trees, fine by me!
 
-In section **Overview of Functionality** you can find a simple description of the things this software can do. **Package Structure** describes, well, the package structure, _i. e._ in what files and directories is what. The remaining sections descibe each sub-module in greater detail.
+In section **Overview of Functionality** you can find a simple description of the things this software can do. **Package Structure** describes, well, the package structure, _i. e._ in what files and directories is what. The remaining sections describe each sub-module in greater detail.
 
-**A Disclamer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
+**A Disclaimer:** This is a very small project written by an amateur who doesn't even like computers that much. I've tried my best to make sure that when the software does work, it will give you correct results. However, if something does not work, you can just look into the code. It really is relatively simple.
 
 ***
 
@@ -61,9 +61,9 @@ This submodule can apply some types of multivariate analysis methods mostly for 
 <img src="Examples_Templates/Images/RSM_Example.png" class="center" width="400" alt="A really impressive although empty response surface">
 
 This submodule will assist in the use of experimental designs from beginning to end. It can:
-- Generate several experimental design matrixes: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
+- Generate several experimental design matrices: full factorial, Plackett-Burman and Box-Behnken (used for response surface modelling);
 - Calculate main effect for the screening designs (two level full factorial and Plackett-Burman);
-- Perform response surface moddeling for a Box-Behnken design;
+- Perform response surface modeling for a Box-Behnken design;
 
 This is by far the most complex submodule, but using it is easy enough. However, one must know the basic theory of experimental design in order to avoid mistakes (something I'm very prone to). In the future I might implement the calculation of statistical significance for main effects in screening designs.
 
@@ -86,11 +86,11 @@ This is a tiny tiny piece of code. It can calculate the volume of solvent used b
 
 The module is useful for those familiar with the python programming language, as it can be used in the creation of custom scripts and routines. The code can be found in the folder `chromapy`.
 
-The Scripts are intended for easy command line use, without requiring any specialized computer knowledge. I've put then in the parent folder so that people can just download the whole repository and run them without difficulty. Currently there are these scripts: `chromacalc.py`  `DOE.py`  `PCA.py`  `PLS.py` and `Quantification.py`. The `.py` means these are python source code files, which your python interperter can read.
+The Scripts are intended for easy command line use, without requiring any specialized computer knowledge. I've put then in the parent folder so that people can just download the whole repository and run them without difficulty. Currently there are these scripts: `chromacalc.py`  `DOE.py`  `PCA.py`  `PLS.py` and `Quantification.py`. The `.py` means these are python source code files, which your python interpreter can read.
 
 The scripts are actually just a way to interface with the module (in the `chromapy` folder) through the command line.
 
-There is also an `Examples_Templates` folder which has example input and output files for every function the software performs. Please look into these carefully, because the program requires very specific inputs to work prperly. This is explained in the detailed sections for each submodule.
+There is also an `Examples_Templates` folder which has example input and output files for every function the software performs. Please look into these carefully, because the program requires very specific inputs to work properly. This is explained in the detailed sections for each submodule.
 
 The file called `Calls_functioning` has several examples of command line calls which will give you a result. Use them as examples to find out how the program works.
 
@@ -117,7 +117,7 @@ It should return a small "manual" for that script (not for the module itself!). 
 python DOE.py -b BBD_Input.csv
 ```
 
-Where `BBD_Input.csv` is your input file with the varaible names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `-f` and `-b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `-r` does response-surface modelling for Box-Behnken designs.
+Where `BBD_Input.csv` is your input file with the variable names and values (check the sample file at `Examples_Templates/DOE`). By default, it will return a file called `Box-Behnken_Design.csv`. The DOE.py script uses different options to select what you want. `-p` `-f` and `-b` are for generating Plackett-Burman, Full-factorial and Box-Behnken designs, respectively. `-m` is for calculating the main effect of Plackett-Burman or two-level Full-factorial designs, and `-r` does response-surface modelling for Box-Behnken designs.
 
 You can simply run each line of code from `Calls_functioning` and it should work. For example:
 
@@ -127,7 +127,7 @@ python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o 
 
 Will give you a partial least squares biplot for 3 response variables, with the loadings scaled to 10x (to fit the biplot) and an output file called `TEST.png`.
 
-***ATENTION: the PLS.py and PCA.py scripts are not finnished and some options have not been implemented! I'll get around to it someday (I hope).***
+***ATENTION: the PLS.py and PCA.py scripts are not finished and some options have not been implemented! I'll get around to it someday (I hope).***
 
 
 ## Multivariate Analysis <a name="multivariate"></a>
@@ -142,7 +142,7 @@ import chromapy
 df = chromapy.pca_import("Examples_Templates/Multivariate/wine_data.csv")
 ```
 
-You do NOT need to use .csv files for most functions, but it is advised. Aso supported are: .xls, .xlsx, .xlsm, .xlsb, .odf, .ods, .odt
+You do NOT need to use .csv files for most functions, but it is advised. Also supported are: .xls, .xlsx, .xlsm, .xlsb, .odf, .ods, .odt
 
 The input file should have:
 
@@ -181,7 +181,7 @@ The `normalization` option can be set to:
 
 Normalizations occur on a sample by sample basis, naturally (not variable by variable). Be aware that if you have response variables (for PLS) these will also be normalized, since the normalization function does not distinguish them.
 
-After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` OR `pls_result` has the values for each sample witin the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing for PCA.
+After normalization, you can calculate the principal components. This function will return 3 objects: `pca_result` OR `pls_result` has the values for each sample within the principal component space. `loadings_df` is a nicely formatted dataframe with each loading (variable) and its respective contribution to each principal component, and `loadings` is the actual object created by scikit-learn's computations, which is used internally when graphing for PCA.
 
 ```python
 pca_result, loadings_df, loadings = chromapy.pca(df_normalized)
@@ -215,7 +215,7 @@ You can (and should) save the graphs as .svg files, which you can then open in i
 
 Built on top of other DOE packages, provides both matrix design as well as data analysis and response surfaces. Supports Placket-Burman and two-level full factorial designs for screening. Also provides Box-Behnken designs for fitting a response surface.
 
-Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excelent R library called rsm, and there is no comparable library for python. The first time you run the code, it should install the required R dependencies.
+Most of the code to generate the experimental design matrixes was forked from [here](https://github.com/JamesMarshall31/design-of-experiments/). The response surface fitting is written in the R language and called directly from python using the rpy2 library. The reason is because the calculations use the excellent R library called rsm, and there is no comparable library for python. The first time you run the code, it should install the required R dependencies.
 
 ### Generating a Design Matrix
 
@@ -314,7 +314,7 @@ main_effect = chromapy.main_effect(results, matrix, dataframe = True)
 
 ### Generating Response Surfaces
 
-To generate response surfaces you can again input either .csv files, or handle everything internally. There is a function called `chromapy.add_results` which takes the R object with the design and a list with the result values, and joins them in a propperly formatted object to perform response-surface moddeling. But by far the easiest way is to output the Box-Behnken design to a csv file (named `Whatever_file_name_suits_you.csv` above) and then add your results to this file by adding a column at the end entitled `Results`. Check the file `BBD_with_results.csv` to get an idea.
+To generate response surfaces you can again input either .csv files, or handle everything internally. There is a function called `chromapy.add_results` which takes the R object with the design and a list with the result values, and joins them in a properly formatted object to perform response-surface modeling. But by far the easiest way is to output the Box-Behnken design to a csv file (named `Whatever_file_name_suits_you.csv` above) and then add your results to this file by adding a column at the end entitled `Results`. Check the file `BBD_with_results.csv` to get an idea.
 
 ```python
 design_rsm = chromapy.rsm("Examples_Templates/DOE/BBD_with_results.csv", "Examples_Templates/DOE/BBD_Input.csv")
@@ -350,7 +350,7 @@ quant_results = chromapy.quantification("Examples_Templates/Quantification/calib
 quant_results.to_csv("Quantification_results.csv")
 ```
 
-If you run the sript multiple times with the same file name (in this case `My_Results.txt`) it will append to that file, with a date and time tag for each run. By default, the sript does not print the quantification results of the samples, they will simply be in `quant_results`. Here we create a file `Quantification_results.csv` which has the mean and standard deviation for each compound in each sample. `My_Results.txt` (or whatever name you give it) will have the method performance parameters for each compound calibrated).
+If you run the script multiple times with the same file name (in this case `My_Results.txt`) it will append to that file, with a date and time tag for each run. By default, the script does not print the quantification results of the samples, they will simply be in `quant_results`. Here we create a file `Quantification_results.csv` which has the mean and standard deviation for each compound in each sample. `My_Results.txt` (or whatever name you give it) will have the method performance parameters for each compound calibrated).
 
 ### Input file formatting
 
@@ -372,9 +372,9 @@ The columns need not be in any particular order, but the column names are import
 - `Conc` The concentration of the compound
 - `CompoundxName` The name you want to appear on the calibration curve image and results for that compound. Can be whatever you want.
 
-The script wil always look for the string `Conc` (CASE SENSITIVE!) in the dataframe header. If you set `int_standard = True` it will also look for `ConcIS` and `SignalIS`. Otherwise, these need not be present. Notice that to use one row for many compounds they all need to be at the same concentration. If you have different concentrations for different compounds just calibrate them in different runs of the script. If you leave blank values the script will not function properly. Also, you cannot add zeros because they will be assumed as signal values.
+The script will always look for the string `Conc` (CASE SENSITIVE!) in the dataframe header. If you set `int_standard = True` it will also look for `ConcIS` and `SignalIS`. Otherwise, these need not be present. Notice that to use one row for many compounds they all need to be at the same concentration. If you have different concentrations for different compounds just calibrate them in different runs of the script. If you leave blank values the script will not function properly. Also, you cannot add zeros because they will be assumed as signal values.
 
-The samples file is similar, and must have exactly the same comound names as the calibration file. It can have more, or in a differen order, but the program will look for the strings which it already "calibrated". So if in your calibration file you have `Caffeine`, then it will look for that exact word (case sensitive!) in the samples dataframe. The samples file requires an aditional column which should be labeled `Sample`. An example with sample triplicates and no internal standard:
+The samples file is similar, and must have exactly the same compound names as the calibration file. It can have more, or in a different order, but the program will look for the strings which it already "calibrated". So if in your calibration file you have `Caffeine`, then it will look for that exact word (case sensitive!) in the samples dataframe. The samples file requires an additional column which should be labeled `Sample`. An example with sample triplicates and no internal standard:
 
 
 | Sample |   Compound1Name | Compound2Name | Compound3Name | ... |
@@ -392,7 +392,7 @@ The samples file is similar, and must have exactly the same comound names as the
 
 The column names:
 
-- `Sample` The sample name. For replicates, use the same name and the sript will calculate the average and standard deviation.
+- `Sample` The sample name. For replicates, use the same name and the script will calculate the average and standard deviation.
 - `ConcIS` The concentration of the internal standard. Only required if `int_standard = True`;
 - `SignalIS` The signal of the internal standard. Only required if `int_standard = True`;
 - `CompoundxName` The name of the compound. Must be EXACTLY the same as that of the calibration file, because the script will search for that name.
