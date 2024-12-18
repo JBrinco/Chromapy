@@ -355,6 +355,7 @@ def pls_plot(pls_result, loadings_df, response, loadings_scale=1, labels=False, 
                     label,
                     color="#FF0000", #if classes_present is False else colors[i],
                     fontweight="bold",
+                    fontsize="large", #For greater clarity of the Responses
                     ha="center",
                     va="center",
                     )
