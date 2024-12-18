@@ -127,6 +127,8 @@ python PLS.py "Examples_Templates/Multivariate/wine_data_PLS.csv" -r 3 -s 10 -o 
 
 Will give you a partial least squares biplot for 3 response variables, with the loadings scaled to 10x (to fit the biplot) and an output file called `TEST.png`.
 
+***ATENTION: the PLS.py and PCA.py scripts are not finnished and some options have not been implemented! I'll get around to it someday (I hope).***
+
 
 ## Multivariate Analysis <a name="multivariate"></a>
 
