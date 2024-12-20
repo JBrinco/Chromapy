@@ -2,8 +2,6 @@
   <img src="Examples_Templates/Images/Chromapy.png" alt="Chromapy">
 </p>
 
-Python Scripts for Chromatographic Data Processing
-
 # Table of Contents
 1. [READ THIS FIRST](#newcomers)
 2. [Overview of Functionality](#overview)
