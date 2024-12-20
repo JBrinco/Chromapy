@@ -403,3 +403,7 @@ Any extra columns on the samples file (such as compounds not being calibrated in
 ## Chromatography Calculators <a name="calculators"></a>
 
 This is an extremely simple piece of code. Check the source for instructions or use the script.
+
+# Acknowledgments
+
+This software package was created as part of a PhD thesis, and Fundação para a Ciência e Tecnologia is acknowledged as the funder, through scholarship number [UI/BD/150867/2021][https://doi.org/10.54499/UI/BD/150867/2021].
