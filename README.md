@@ -404,4 +404,6 @@ This is an extremely simple piece of code. Check the source for instructions or 
 
 # Acknowledgments
 
+You can use and modify Chromapy under the terms of the GNU GPL V.3. If you found the software useful, please consider linking this repository in your publications: `https://github.com/JBrinco/Chromapy`.
+
 This software package was created as part of a PhD thesis, and Fundação para a Ciência e Tecnologia is acknowledged as the funder, through scholarship number [UI/BD/150867/2021](https://doi.org/10.54499/UI/BD/150867/2021).
